@@ -12,9 +12,9 @@ export function LandingPage(props) {
 
     return (
         <div className="home">
-            <h2>Welcome to Foo App</h2>
-            <LoginForm />
-            <Link to="/register">Register</Link>
+            <h2>Learn the language of the Horselords</h2>
+            {/* <LoginForm /> */}
+            <Link to="/register">Begin</Link>
         </div>
     );
 }

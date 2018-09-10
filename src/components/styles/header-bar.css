@@ -1,0 +1,34 @@
+/* mobile/base */
+.header-bar {
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 14px 16px;
+
+}
+
+li {
+  display: inline;
+  text-align: center;
+}
+  
+
+  /* tablet */
+  @media all and (min-width: 768px) {
+  
+  }
+  
+  /* desktop */
+  @media all and (min-width: 1024px) {
+  
+  }
+  
+  
+  /* mobile landscape
+  @media all and (min-width: 480px) {
+  } */
+  /* desktop wide
+  @media all and (min-width: 1200px) {
+  
+  } */
