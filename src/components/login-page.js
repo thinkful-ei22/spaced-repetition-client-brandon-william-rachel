@@ -10,7 +10,7 @@ export function LoginPage(props) {
         <div>
             <h2>Login to Dothraki app</h2>
             <LoginForm/>
-            <Link to="/">Login</Link>
+            {/* <Link to="/">Login</Link> */}
         </div>
     );
 }
