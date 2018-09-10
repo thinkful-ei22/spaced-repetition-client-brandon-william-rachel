@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
-import {Link, Redirect} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import './styles/header-bar.css';
 
 export class HeaderBar extends React.Component {
@@ -22,7 +22,7 @@ export class HeaderBar extends React.Component {
         return (
             <section className="header-bar">
                 <ul>
-                    <li>Learn Dothraki</li>
+                    <li><img src={require('../images/LearningDothraki.png')} alt="learn dothraki logo" className="logo"/></li>
                     <Link to="/register"><li><button className="signup">Sign Up</button></li></Link>
                     <Link to="/login"><li><button className="login">Log In</button></li></Link>
                     {logOutButton}
