@@ -8,9 +8,18 @@ export function LoginPage(props) {
     
     return (
         <div>
-            <h2>Login to Dothraki app</h2>
+            <div className="login-page">
+        <main className="main-img-section">
+
+            <h2 className="headline-text">Learn the language of the Horselords</h2>
+
+            <img src={require('../images/dothraki-main.jpg')} alt="Dothraki Horde"  className="main-img"/>
+            <div className="register">
             <LoginForm/>
-            <Link to="/">Login</Link>
+
+            </div>
+            </main>
+                   </div>
         </div>
     );
 }

@@ -4,7 +4,7 @@
 ul {
   list-style-type: none;
   margin: 0;
-  padding: 14px 16px;
+padding: 0;
 
 }
 
@@ -20,9 +20,14 @@ button{
 /* Classes */
 
 .header-bar {
+  display: flex;
 }
-
+.logo{
+  width: 50%;
+}
 .login, .signup{
+  margin-top: 20px;
+  margin-right: 10px;
   float: right;
 }
 
