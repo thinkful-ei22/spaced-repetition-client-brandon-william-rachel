@@ -1,6 +1,6 @@
 /* mobile/base */
-.header-bar {
-}
+
+/* elements */
 ul {
   list-style-type: none;
   margin: 0;
@@ -12,7 +12,23 @@ li {
   display: inline;
   text-align: center;
 }
-  
+button{
+  border: 1px solid black;
+
+}
+
+/* Classes */
+
+.header-bar {
+}
+
+.login, .signup{
+  float: right;
+}
+
+.login{
+margin-right: 5px;
+}
 
   /* tablet */
   @media all and (min-width: 768px) {

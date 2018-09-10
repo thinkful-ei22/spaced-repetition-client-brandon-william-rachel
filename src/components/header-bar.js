@@ -20,14 +20,14 @@ export class HeaderBar extends React.Component {
             );
         }
         return (
-            <div className="header-bar">
+            <section className="header-bar">
                 <ul>
-                    <li>Dothraki app</li>
-                    <Link to="/login"><li>Log In</li></Link>
-                    <Link to="/register"><li>Sign Up</li></Link>
+                    <li>Learn Dothraki</li>
+                    <Link to="/register"><li><button className="signup">Sign Up</button></li></Link>
+                    <Link to="/login"><li><button className="login">Log In</button></li></Link>
                     {logOutButton}
                 </ul>
-            </div>
+            </section>
         );
     }
 }
