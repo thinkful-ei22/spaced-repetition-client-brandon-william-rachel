@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import './styles/app.css';
-export function Answer(props){
+export function UserInput(props){
 
 
 
@@ -20,4 +20,4 @@ const mapStateToProps = state => ({
 answerLabel: state.answerLabel = 'Answer'
 });
 
-export default connect (mapStateToProps)(Answer);
+export default connect (mapStateToProps)(UserInput);

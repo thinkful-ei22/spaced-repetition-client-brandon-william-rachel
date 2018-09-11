@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
 import FeedbackSection from './feedback-section';
-import Answer from './answer';
+import UserInput from './user-input';
 import './styles/app.css';
 
 import PromptSection from './prompt-section';
@@ -47,7 +47,7 @@ export class Dashboard extends React.Component {
         return (
             <div className="dashboard">
                 <main className="main-img-section">
-                <Answer onClick={e => this.setScore(e)}/>
+                <UserInput onClick={e => this.setScore(e)}/>
                 <button className="next">Next</button>
             <img src={require('../images/dothraki-main.jpg')} alt="Dothraki Horde"  className="main-img"/>
                 <FeedbackSection
