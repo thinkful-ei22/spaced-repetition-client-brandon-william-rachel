@@ -2,7 +2,12 @@ import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
+
 import Answer from './answer';
+
+import PromptSection from './prompt-section';
+
+
 export class Dashboard extends React.Component {
     constructor(props){
         super(props);
@@ -15,9 +20,21 @@ export class Dashboard extends React.Component {
         this.props.dispatch(fetchProtectedData());
     }
 
+   
+
     render() {
-        // console.log(this.props);
-        //console.log()
+
+
+
+
+        const currentQuestion = {
+            prompt: 'The stars are charging for you!',
+            hint: 'The Dothraki word for "stars" is "shieraki"',
+            answer: 'Shieraki gori ha yeraan!'
+        }
+        console.log(this.props);
+
+      
         return (
             <div className="dashboard">
                 <main className="main-img-section">
@@ -30,6 +47,7 @@ export class Dashboard extends React.Component {
                 
                 <div className="dashboard-name">Logged in as: {this.props.name}</div>
                 
+                <PromptSection _currentQuestion={currentQuestion}/>
             </div>
         );
     }
