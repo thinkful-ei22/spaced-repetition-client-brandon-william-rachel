@@ -21,7 +21,6 @@ export function LandingPage(props) {
             </main>
 
 <section className="descriptions">
-
 <div className="space-rep">
 <h3 className="title">Spaced Repetition</h3>
 <div className="text">
