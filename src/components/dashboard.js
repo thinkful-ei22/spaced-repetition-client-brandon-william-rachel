@@ -13,7 +13,6 @@ export class Dashboard extends React.Component {
     constructor(props){
         super(props);
         this.state ={
-            answerLabel: 'Correct',
             correctAnswer: 0,
             totalQuestions: 0,
             score: 0
