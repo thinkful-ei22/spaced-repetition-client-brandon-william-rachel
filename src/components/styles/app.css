@@ -1,25 +1,39 @@
-
-
 .answer{
   position: absolute;
   background-color: white;
   opacity: .8;
   height: 50px;
-  width: 80%;
+  width: 50%;
   border: 1px solid black;
   z-index: 1;
-  left: 10%;
+  left: 25%;
   top: 170px;
 }
 .answer > label {
   color: black;
   position: absolute;
-  left: 37%;
+  left: 35%;
 }
 .answer > input{
-  width: 95%;
-  top: 30px;
+  width: 58%;
+  top: 29px;
+  height: 14px;
   margin-left: 4px;
   position: absolute;
 
+}
+.answer > button{
+  position: absolute;
+left: 65%;
+top: 29px;
+border-radius: 8px;
+}
+.next{
+  position: absolute;
+  z-index: 1;
+  border-radius: 8px;
+  float:right;
+}
+.dashboard-name{
+  text-align: center;
 }

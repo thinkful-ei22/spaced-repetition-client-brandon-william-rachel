@@ -22,17 +22,14 @@ export class Dashboard extends React.Component {
             <div className="dashboard">
                 <main className="main-img-section">
                 <Answer />
+                <button className="next">Next</button>
             <img src={require('../images/dothraki-main.jpg')} alt="Dothraki Horde"  className="main-img"/>
 
             </main>
                
-                <div className="dashboard-username">
-                    Username: {this.props.username}
-                </div>
-                <div className="dashboard-name">Hello {this.props.name}!</div>
-                <div className="dashboard-protected-data">
-                    Protected data: {this.props.protectedData}
-                </div>
+                
+                <div className="dashboard-name">Logged in as: {this.props.name}</div>
+                
             </div>
         );
     }
