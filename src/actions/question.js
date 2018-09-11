@@ -31,7 +31,7 @@ export const FETCH_QUESTION_SUCCESS = 'FETCH_QUESTION_SUCCESS';
 export const fetchQuestionSuccess = (question) => ({
     //handleSuccess
     type: FETCH_QUESTION_SUCCESS,
-    _currentQuestion: question
+    currentQuestion: question
 });
 
 export const FETCH_QUESTION_ERROR = 'FETCH_QUESTION_ERROR';

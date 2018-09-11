@@ -2,7 +2,7 @@ import { FETCH_QUESTION_REQUEST, FETCH_QUESTION_SUCCESS, FETCH_QUESTION_ERROR} f
 
 const initialState = {
     loading: false,
-    _currentQuestion: null,
+    currentQuestion: null,
     error: null
 }
 
@@ -17,7 +17,7 @@ export  default function questionReducer(state=initialState, action) {
     } else if( action.type===FETCH_QUESTION_SUCCESS){
         return Object.assign({}, state, {
             loading: false,
-            _currentQuestion: action._currentQuestion
+            currentQuestion: action.currentQuestion
         })
     } else if( action.type===FETCH_QUESTION_ERROR){
         return Object.assign({}, state, {

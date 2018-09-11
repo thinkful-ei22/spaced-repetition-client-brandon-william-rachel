@@ -70,7 +70,7 @@ export class Dashboard extends React.Component {
                 <div className="score">Word Accuracy: <span id="percentage">{this.state.score}</span>%</div>
                 
                 
-                <PromptSection _currentQuestion={(!this.props._currentQuestion)  ?  'loading' : this.props._currentQuestion}/>
+                <PromptSection currentQuestion={(!this.props.currentQuestion)  ?  'loading' : this.props.currentQuestion}/>
             </div>
         );
     }
@@ -85,7 +85,9 @@ const mapStateToProps = state => {
         username: state.auth.currentUser.username,
         name: `${currentUser.firstname} ${currentUser.lastName}`,
         authToken: state.auth.authToken,
-        _currentQuestion: state.currentQuestion._currentQuestion,
+
+        currentQuestion: state.question.currentQuestion,
+
         userAnswer: state.answer,
         feedback: state.feedback,
         correctAnswer: state.correctAnswer
