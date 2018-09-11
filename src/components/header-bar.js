@@ -13,18 +13,26 @@ export class HeaderBar extends React.Component {
 
     render() {
         // Only render the log out button if we are logged in
-        let logOutButton;
+        let logOutButton, signUpButton, logInButton;
         if (this.props.loggedIn) {
             logOutButton = (
-                <button onClick={() => this.logOut()}>Log out</button>
+                <button className="logout" onClick={() => this.logOut()}>Log out</button>
             );
+        }
+        else {
+            signUpButton =(
+            <button className="signup">Sign Up</button>
+            );
+            logInButton =(
+                <button className="login">Log In</button>
+                );
         }
         return (
             <section className="header-bar">
                 <ul>
                     <li><img src={require('../images/LearningDothraki.png')} alt="learn dothraki logo" className="logo"/></li>
-                    <Link to="/register"><li><button className="signup">Sign Up</button></li></Link>
-                    <Link to="/login"><li><button className="login">Log In</button></li></Link>
+                    <Link to="/register"><li>{signUpButton}</li></Link>
+                    <Link to="/login"><li>{logInButton}</li></Link>
                     {logOutButton}
                 </ul>
             </section>
