@@ -1,0 +1,25 @@
+
+
+.answer{
+  position: absolute;
+  background-color: white;
+  opacity: .8;
+  height: 50px;
+  width: 80%;
+  border: 1px solid black;
+  z-index: 1;
+  left: 10%;
+  top: 170px;
+}
+.answer > label {
+  color: black;
+  position: absolute;
+  left: 37%;
+}
+.answer > input{
+  width: 95%;
+  top: 30px;
+  margin-left: 4px;
+  position: absolute;
+
+}
