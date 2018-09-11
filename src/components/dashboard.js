@@ -2,13 +2,23 @@ import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
+import PromptSection from './prompt-section';
 
 export class Dashboard extends React.Component {
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
     }
 
+   
+
     render() {
+
+
+        const currentQuestion = {
+            prompt: 'The stars are charging for you!',
+            hint: 'The Dothraki word for "stars" is "shieraki"',
+            answer: 'Shieraki gori ha yeraan!'
+        }
         console.log(this.props);
         //console.log()
         return (
@@ -26,6 +36,7 @@ export class Dashboard extends React.Component {
                 <div className="dashboard-protected-data">
                     Protected data: {this.props.protectedData}
                 </div>
+                <PromptSection _currentQuestion={currentQuestion}/>
             </div>
         );
     }
