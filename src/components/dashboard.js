@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
-
+import FeedbackSection from './feedback-section';
 import Answer from './answer';
 import './styles/app.css';
 
@@ -50,7 +50,10 @@ export class Dashboard extends React.Component {
                 <Answer onClick={e => this.setScore(e)}/>
                 <button className="next">Next</button>
             <img src={require('../images/dothraki-main.jpg')} alt="Dothraki Horde"  className="main-img"/>
-
+                <FeedbackSection
+                    feedback={ this.props.feedback}
+                    //feedback reducer info goes here?
+                />
             </main>
                
                 
@@ -62,12 +65,18 @@ export class Dashboard extends React.Component {
     }
 }
 
+// DEFAULT PROPS?? - is this where the correct answers go?
+
 const mapStateToProps = state => {
     const {currentUser} = state.auth;
     return {
         username: state.auth.currentUser.username,
         name: `${currentUser.firstname} ${currentUser.lastName}`,
-        protectedData: state.protectedData.data
+        protectedData: state.protectedData.data,
+        userAnswer: state.answer,
+        feedback: state.feedback,
+        correctAnswer: state.correctAnswer
+
     };
 };
 
