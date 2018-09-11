@@ -32,8 +32,9 @@ border-radius: 8px;
   position: absolute;
   z-index: 1;
   border-radius: 8px;
-  float:right;
+top: 200px;
+left: 85%;
 }
-.dashboard-name{
+.dashboard-name, .score{
   text-align: center;
 }

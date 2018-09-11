@@ -11,7 +11,7 @@ export function Answer(props){
     
     <label>{props.answerLabel} <br /> </label>
     <input placeholder="Enter guess here" />
-    <button>Submit</button>
+    <button onClick={e=> props.onClick(e)}>Submit</button>
     </section>
   );
 }

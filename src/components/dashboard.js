@@ -4,6 +4,7 @@ import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
 
 import Answer from './answer';
+import './styles/app.css';
 
 import PromptSection from './prompt-section';
 
@@ -12,17 +13,26 @@ export class Dashboard extends React.Component {
     constructor(props){
         super(props);
         this.state ={
-            answerLabel: 'Correct'
+            answerLabel: 'Correct',
+            correctAnswer: 0,
+            totalQuestions: 0,
+            score: 0
         }
     }
-    
+     setScore(e){
+
+        this.setState({
+            score: (this.state.correctAnswer/this.state.totalQuestions)*100
+        });
+    }
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
     }
 
-   
+    
 
     render() {
+
 
 
 
@@ -38,7 +48,7 @@ export class Dashboard extends React.Component {
         return (
             <div className="dashboard">
                 <main className="main-img-section">
-                <Answer />
+                <Answer onClick={e => this.setScore(e)}/>
                 <button className="next">Next</button>
             <img src={require('../images/dothraki-main.jpg')} alt="Dothraki Horde"  className="main-img"/>
 
@@ -46,7 +56,7 @@ export class Dashboard extends React.Component {
                
                 
                 <div className="dashboard-name">Logged in as: {this.props.name}</div>
-                
+                <div className="score">Word Accuracy: <span id="percentage">{this.state.score}</span>%</div>
                 <PromptSection _currentQuestion={currentQuestion}/>
             </div>
         );
