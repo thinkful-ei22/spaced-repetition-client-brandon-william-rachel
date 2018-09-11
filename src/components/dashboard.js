@@ -16,14 +16,16 @@ export class Dashboard extends React.Component {
     }
 
     render() {
-        // console.log(this.props);
-        //console.log()
+       
         return (
             <div className="dashboard">
                 <main className="main-img-section">
                 <Answer />
             <img src={require('../images/dothraki-main.jpg')} alt="Dothraki Horde"  className="main-img"/>
-
+                <FeedbackSection
+                    feedback={ this.props.feedback}
+                    //feedback reducer info goes here?
+                />
             </main>
                
                 <div className="dashboard-username">
@@ -38,12 +40,18 @@ export class Dashboard extends React.Component {
     }
 }
 
+// DEFAULT PROPS?? - is this where the correct answers go?
+
 const mapStateToProps = state => {
     const {currentUser} = state.auth;
     return {
         username: state.auth.currentUser.username,
         name: `${currentUser.firstname} ${currentUser.lastName}`,
-        protectedData: state.protectedData.data
+        protectedData: state.protectedData.data,
+        userAnswer: state.answer,
+        feedback: state.feedback,
+        correctAnswer: state.correctAnswer
+
     };
 };
 
