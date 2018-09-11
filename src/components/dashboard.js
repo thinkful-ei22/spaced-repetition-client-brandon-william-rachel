@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
-import { fetchQuestion } from '../actopms/question';
+import { fetchQuestion } from '../actions/question';
 import Answer from './answer';
 
 import PromptSection from './prompt-section';
@@ -24,7 +24,7 @@ export class Dashboard extends React.Component {
             'Content-Type' : 'application/json'
           };
         this.props.dispatch(fetchQuestion(headers));
-        this.props.dispatch(fetchProtectedData());
+        
     }
 
    
@@ -34,12 +34,12 @@ export class Dashboard extends React.Component {
 
 
 
-        const currentQuestion = {
-            prompt: 'The stars are charging for you!',
-            hint: 'The Dothraki word for "stars" is "shieraki"',
-            answer: 'Shieraki gori ha yeraan!'
-        }
-        console.log(this.props);
+        // const currentQuestion = {
+        //     prompt: 'The stars are charging for you!',
+        //     hint: 'The Dothraki word for "stars" is "shieraki"',
+        //     answer: 'Shieraki gori ha yeraan!'
+        // }
+       
 
       
         return (
@@ -54,7 +54,7 @@ export class Dashboard extends React.Component {
                 
                 <div className="dashboard-name">Logged in as: {this.props.name}</div>
                 
-                <PromptSection _currentQuestion={currentQuestion}/>
+                <PromptSection _currentQuestion={(!this.props._currentQuestion)  ?  'loading' : this.props._currentQuestion}/>
             </div>
         );
     }
@@ -62,10 +62,12 @@ export class Dashboard extends React.Component {
 
 const mapStateToProps = state => {
     const {currentUser} = state.auth;
+    
     return {
         username: state.auth.currentUser.username,
         name: `${currentUser.firstname} ${currentUser.lastName}`,
-        protectedData: state.protectedData.data
+        authToken: state.auth.authToken,
+        _currentQuestion: state.currentQuestion._currentQuestion
     };
 };
 

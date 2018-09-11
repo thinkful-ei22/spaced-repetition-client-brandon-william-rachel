@@ -13,9 +13,9 @@ const store = createStore(
     combineReducers({
         form: formReducer,
         auth: authReducer,
-        protectedData: protectedDataReducer,
+        // protectedData: protectedDataReducer,
         currentQuestion: questionReducer
-    }),
+    }), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
     applyMiddleware(thunk)
 );
 
