@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
-
+import { fetchQuestion } from '../actopms/question';
 import Answer from './answer';
 
 import PromptSection from './prompt-section';
@@ -16,7 +16,14 @@ export class Dashboard extends React.Component {
         }
     }
     
+
+    
     componentDidMount() {
+        const headers = {
+            'Authorization': 'Bearer ' + this.props.authToken,
+            'Content-Type' : 'application/json'
+          };
+        this.props.dispatch(fetchQuestion(headers));
         this.props.dispatch(fetchProtectedData());
     }
 
