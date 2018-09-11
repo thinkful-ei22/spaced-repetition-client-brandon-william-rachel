@@ -1,9 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
-import {fetchProtectedData} from '../actions/protected-data';
+//import {fetchProtectedData} from '../actions/protected-data';
 import { fetchQuestion } from '../actions/question';
-import Answer from './answer';
+
+import FeedbackSection from './feedback-section';
+import UserInput from './user-input';
 import './styles/app.css';
 
 import PromptSection from './prompt-section';
@@ -13,7 +15,6 @@ export class Dashboard extends React.Component {
     constructor(props){
         super(props);
         this.state ={
-            answerLabel: 'Correct',
             correctAnswer: 0,
             totalQuestions: 0,
             score: 0
@@ -55,10 +56,13 @@ export class Dashboard extends React.Component {
         return (
             <div className="dashboard">
                 <main className="main-img-section">
-                <Answer onClick={e => this.setScore(e)}/>
+                <UserInput onClick={e => this.setScore(e)}/>
                 <button className="next">Next</button>
             <img src={require('../images/dothraki-main.jpg')} alt="Dothraki Horde"  className="main-img"/>
-
+                <FeedbackSection
+                    feedback={ this.props.feedback}
+                    //feedback reducer info goes here?
+                />
             </main>
                
                 
@@ -72,6 +76,8 @@ export class Dashboard extends React.Component {
     }
 }
 
+// DEFAULT PROPS?? - is this where the correct answers go?
+
 const mapStateToProps = state => {
     const {currentUser} = state.auth;
     
@@ -79,7 +85,11 @@ const mapStateToProps = state => {
         username: state.auth.currentUser.username,
         name: `${currentUser.firstname} ${currentUser.lastName}`,
         authToken: state.auth.authToken,
-        _currentQuestion: state.currentQuestion._currentQuestion
+        _currentQuestion: state.currentQuestion._currentQuestion,
+        userAnswer: state.answer,
+        feedback: state.feedback,
+        correctAnswer: state.correctAnswer
+
     };
 };
 
