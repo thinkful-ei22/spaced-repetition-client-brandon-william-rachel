@@ -13,6 +13,12 @@ export class Dashboard extends React.Component {
         //console.log()
         return (
             <div className="dashboard">
+                <main className="main-img-section">
+
+            <img src={require('../images/dothraki-main.jpg')} alt="Dothraki Horde"  className="main-img"/>
+
+            </main>
+               
                 <div className="dashboard-username">
                     Username: {this.props.username}
                 </div>
