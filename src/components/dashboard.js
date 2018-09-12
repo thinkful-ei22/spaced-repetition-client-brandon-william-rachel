@@ -3,7 +3,8 @@ import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 //import {fetchProtectedData} from '../actions/protected-data';
 import { fetchQuestion } from '../actions/question';
-
+import { clearAuth } from '../actions/auth';
+import { clearAuthToken } from '../local-storage';
 import FeedbackSection from './feedback-section';
 import UserInput from './user-input';
 import './styles/app.css';
@@ -20,7 +21,8 @@ export class Dashboard extends React.Component {
             thisQuestionCorrect: false,
             totalQuestionsCorrect: 0,
             totalQuestionsAsked: 0,
-            accuracy: 0
+            accuracy: 0,
+            nextClass: 'hidden',
         }
     }
      setScore(){
@@ -64,6 +66,7 @@ export class Dashboard extends React.Component {
                         labelColor:'green'
                     }, function(){
                         this.setScore();
+                        this.showFinish();
                     });
 
                 }
@@ -75,14 +78,12 @@ export class Dashboard extends React.Component {
                     }, function(){
                         console.log(this.state.thisQuestionCorrect);
                         this.setScore();
+                        this.showFinish();
                     });
                 }
-
             }
         }
-
     }
-    
     componentDidMount() {
         const headers = {
             'Authorization': 'Bearer ' + this.props.authToken,
@@ -95,23 +96,27 @@ export class Dashboard extends React.Component {
         });
         console.log()
     }
-
     showAccuracy() {
-
         if (this.state.totalQuestionsAsked > 0) {
             return <span id="percentage">{this.state.accuracy}%</span>;
         }
         else {
             return <span id="percentage"> %</span>;
         }           
-
     }
     showLabel() {
-
             return <UserInput labelColor={this.state.labelColor} answerLabel ={this.state.answerLabel} />;               
     }
-    
 
+    showFinish() {
+        this.setState({
+            nextClass: 'next'
+        })               
+}
+logOut() {
+    this.props.dispatch(clearAuth());
+    clearAuthToken();
+}
     render() {
 
 
@@ -129,7 +134,8 @@ export class Dashboard extends React.Component {
             <div className="dashboard">
                 <main className="main-img-section">
                 {this.showLabel()}
-                <button className="next">Next</button>
+                <button className={this.state.nextClass}>Next</button>
+                <button className="finish" onClick={() => this.logOut()}>Finish</button>
             <img src={require('../images/dothraki-main.jpg')} alt="Dothraki Horde"  className="main-img"/>
                 <FeedbackSection
                     feedback={ this.props.feedback}

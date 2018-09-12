@@ -7,6 +7,9 @@
 .red{
   color: red;
 }
+.hidden{
+  display: none;
+}
 .answer{
   position: absolute;
   background-color: white;
