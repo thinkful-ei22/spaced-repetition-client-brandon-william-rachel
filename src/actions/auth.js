@@ -1,7 +1,6 @@
 import jwtDecode from 'jwt-decode';
 import {SubmissionError} from 'redux-form';
-import React from "react";
-import {Redirect} from 'react-router-dom';
+
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 import {saveAuthToken, clearAuthToken} from '../local-storage';

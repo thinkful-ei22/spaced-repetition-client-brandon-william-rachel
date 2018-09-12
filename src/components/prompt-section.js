@@ -24,7 +24,7 @@ render() {
     //console.log(this.props._currentQuestion.hint);
     //console.log('Elmos World', this.state)
     console.log(this.props)
-const Prompt = <h3>{(this.props.currentQuestion =='loading') ? 'loading' : this.props.currentQuestion.question }</h3>
+const Prompt = <h3>{(this.props.currentQuestion ==='loading') ? 'loading' : this.props.currentQuestion.question }</h3>
 
 let Hint='';
 if( this.state.hintVisible !== false){

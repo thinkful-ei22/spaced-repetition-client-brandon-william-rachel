@@ -15,19 +15,73 @@ export class Dashboard extends React.Component {
     constructor(props){
         super(props);
         this.state ={
-            correctAnswer: 0,
-            totalQuestions: 0,
-            score: 0
+            answerLabel: '',
+            labelColor: 'black',
+            thisQuestionCorrect: false,
+            totalQuestionsCorrect: 0,
+            totalQuestionsAsked: 0,
+            accuracy: 0
         }
     }
-     setScore(e){
+     setScore(){
+         if (this.state.thisQuestionCorrect === true){
+             this.setState({
+                 totalQuestionsCorrect: this.state.totalQuestionsCorrect+1,
+                 totalQuestionsAsked: this.state.totalQuestionsAsked+1
+             }, 
+             function(){
+                 this.setState({
+                     accuracy: (this.state.totalQuestionsCorrect/this.state.totalQuestionsAsked)*100
+                 })
+             }
+                 );
+         }
+         else {
 
-        this.setState({
-            score: (this.state.correctAnswer/this.state.totalQuestions)*100
-        });
+            this.setState({
+                totalQuestionsAsked: this.state.totalQuestionsAsked + 1
+            },  function(){
+                this.setState({
+                    accuracy: (this.state.totalQuestionsCorrect/this.state.totalQuestionsAsked)*100
+                })
+            } );
+         }
+       
     }
     
 
+    
+    componentDidUpdate(nextProps){
+        if (nextProps.userInput !== this.props.userInput){
+          
+            if (this.props.userInput !== ''){
+
+
+                if (this.props.userInput.toLowerCase() === this.props._currentQuestion.answer.toLowerCase()){
+                    this.setState({
+                        thisQuestionCorrect: true,
+                        answerLabel:'Correct!',
+                        labelColor:'green'
+                    }, function(){
+                        this.setScore();
+                    });
+
+                }
+                else {
+                    this.setState({
+                        thisQuestionCorrect: false,
+                        answerLabel:'Incorrect',
+                        labelColor: 'red'
+                    }, function(){
+                        console.log(this.state.thisQuestionCorrect);
+                        this.setScore();
+                    });
+                }
+
+            }
+        }
+
+    }
     
     componentDidMount() {
         const headers = {
@@ -36,8 +90,26 @@ export class Dashboard extends React.Component {
           };
         this.props.dispatch(fetchQuestion(headers));
         
+        this.setState({
+            answerLabel: 'Answer'
+        });
+        console.log()
     }
 
+    showAccuracy() {
+
+        if (this.state.totalQuestionsAsked > 0) {
+            return <span id="percentage">{this.state.accuracy}%</span>;
+        }
+        else {
+            return <span id="percentage"> %</span>;
+        }           
+
+    }
+    showLabel() {
+
+            return <UserInput labelColor={this.state.labelColor} answerLabel ={this.state.answerLabel} />;               
+    }
     
 
     render() {
@@ -56,7 +128,7 @@ export class Dashboard extends React.Component {
         return (
             <div className="dashboard">
                 <main className="main-img-section">
-                <UserInput onClick={e => this.setScore(e)}/>
+                {this.showLabel()}
                 <button className="next">Next</button>
             <img src={require('../images/dothraki-main.jpg')} alt="Dothraki Horde"  className="main-img"/>
                 <FeedbackSection
@@ -67,7 +139,7 @@ export class Dashboard extends React.Component {
                
                 
                 <div className="dashboard-name">Logged in as: {this.props.name}</div>
-                <div className="score">Word Accuracy: <span id="percentage">{this.state.score}</span>%</div>
+                <div className="score">Word Accuracy: {this.showAccuracy()}</div>
                 
                 
                 <PromptSection currentQuestion={(!this.props.currentQuestion)  ?  'loading' : this.props.currentQuestion}/>
@@ -87,8 +159,8 @@ const mapStateToProps = state => {
         authToken: state.auth.authToken,
 
         currentQuestion: state.question.currentQuestion,
-
-        userAnswer: state.answer,
+        
+        userInput: state.scoring.userInput,
         feedback: state.feedback,
         correctAnswer: state.correctAnswer
 
