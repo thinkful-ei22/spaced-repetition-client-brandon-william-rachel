@@ -85,11 +85,12 @@ export class Dashboard extends React.Component {
         }
     }
     componentDidMount() {
+        const { username }= this.props;
         const headers = {
             'Authorization': 'Bearer ' + this.props.authToken,
             'Content-Type' : 'application/json'
           };
-        this.props.dispatch(fetchQuestion(headers));
+        this.props.dispatch(fetchQuestion(headers, username));
         
         this.setState({
             answerLabel: 'Answer'

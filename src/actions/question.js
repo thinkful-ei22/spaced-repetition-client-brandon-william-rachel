@@ -1,11 +1,13 @@
 
 import {API_BASE_URL} from '../config'; 
 
-export const fetchQuestion = (headers) => dispatch => {
+export const fetchQuestion = (headers) => (dispatch, getState)  => {
     dispatch(fetchQuestionRequest());
+    //const username = getState().auth.currentUser.username;
     return fetch(`${API_BASE_URL}/questions`, { 
     method:'GET',
     headers
+    //body: JSON.stringify(username)
     }).then(res => {
         if (!res.ok) {
             throw new Error(res.statusText);
@@ -18,7 +20,7 @@ export const fetchQuestion = (headers) => dispatch => {
         
     ).catch(err =>
         dispatch(fetchQuestionError(err))
-    );
+    )
 };
 
 export const FETCH_QUESTION_REQUEST = 'FETCH_QUESTION_REQUEST';

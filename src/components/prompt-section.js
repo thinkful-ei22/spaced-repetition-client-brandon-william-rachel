@@ -10,7 +10,7 @@ export default class PromptSection extends React.Component {
     }
 
 
-    
+    code
 showHint(e) {
     e.preventDefault();
     this.setState({
