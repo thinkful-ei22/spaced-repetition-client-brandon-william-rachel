@@ -107,7 +107,8 @@ export class Dashboard extends React.Component {
         }           
     }
     showLabel() {
-            return <UserInput labelColor={this.state.labelColor} answerLabel ={this.state.answerLabel} />;               
+            return <UserInput _isCorrect={this.state.thisQuestionCorrect} labelColor={this.state.labelColor} 
+            answerLabel ={this.state.answerLabel} />;               
     }
 
     showFinish() {
@@ -126,19 +127,20 @@ nextQuestion(){
         'Content-Type' : 'application/json'
       };
       
-    let { memoryStrength } = this.props.currentQuestion;
+    // let { memoryStrength } = this.props.currentQuestion;
 
 
-    if( !this.state.thisQuestionCorrect && memoryStrength !== 0){
-       memoryStrength = memoryStrength - 1;
-    } else if(this.state.thisQuestionCorrect){
-        memoryStrength = memoryStrength +1;
-    }
+    // if( !this.state.thisQuestionCorrect && memoryStrength !== 0){
+    //    memoryStrength = memoryStrength - 1;
+    // } else if(this.state.thisQuestionCorrect){
+    //     memoryStrength = memoryStrength +1;
+    // }
        
 
 
-      console.log(memoryStrength, 'MEMORY STRENGTH>>>>>');
-    this.props.dispatch(fetchNextQuestion(headers, memoryStrength));
+    //   console.log(memoryStrength, 'MEMORY STRENGTH>>>>>');
+    const isCorrect = this.state.thisQuestionCorrect;
+    this.props.dispatch(fetchNextQuestion(headers, isCorrect));
     //console.log('NExt Question Async call made');
 }
     render() {

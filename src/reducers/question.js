@@ -30,8 +30,8 @@ export  default function questionReducer(state=initialState, action) {
         })
     } else if( action.type===FETCH_NEXT_QUESTION_SUCCESS){
         return Object.assign({}, state, {
-            loading: false,
-            currentQuestion: action.currentQuestion
+            loading: false
+            
         })
     } else if( action.type===FETCH_NEXT_QUESTION_ERROR){
         return Object.assign({}, state, {
