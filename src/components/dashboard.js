@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 //import {fetchProtectedData} from '../actions/protected-data';
 import { fetchQuestion } from '../actions/question';
+import { fetchNextQuestion } from '../actions/questions-next';
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
 import FeedbackSection from './feedback-section';
@@ -59,7 +60,7 @@ export class Dashboard extends React.Component {
             if (this.props.userInput !== ''){
 
 
-                if (this.props.userInput.toLowerCase() === this.props._currentQuestion.answer.toLowerCase()){
+                if (this.props.userInput.toLowerCase() === this.props.currentQuestion.answer.toLowerCase()){
                     this.setState({
                         thisQuestionCorrect: true,
                         answerLabel:'Correct!',
@@ -76,7 +77,7 @@ export class Dashboard extends React.Component {
                         answerLabel:'Incorrect',
                         labelColor: 'red'
                     }, function(){
-                        console.log(this.state.thisQuestionCorrect);
+                       // console.log(this.state.thisQuestionCorrect);
                         this.setScore();
                         this.showFinish();
                     });
@@ -85,17 +86,17 @@ export class Dashboard extends React.Component {
         }
     }
     componentDidMount() {
-        const { username }= this.props;
+        //const { username }= this.props;
         const headers = {
             'Authorization': 'Bearer ' + this.props.authToken,
             'Content-Type' : 'application/json'
           };
-        this.props.dispatch(fetchQuestion(headers, username));
+        this.props.dispatch(fetchQuestion(headers));
         
         this.setState({
             answerLabel: 'Answer'
         });
-        console.log()
+        //console.log()
     }
     showAccuracy() {
         if (this.state.totalQuestionsAsked > 0) {
@@ -118,6 +119,28 @@ logOut() {
     this.props.dispatch(clearAuth());
     clearAuthToken();
 }
+
+nextQuestion(){
+    const headers = {
+        'Authorization': 'Bearer ' + this.props.authToken,
+        'Content-Type' : 'application/json'
+      };
+      
+    let { memoryStrength } = this.props.currentQuestion;
+
+
+    if( !this.state.thisQuestionCorrect && memoryStrength !== 0){
+       memoryStrength = memoryStrength - 1;
+    } else if(this.state.thisQuestionCorrect){
+        memoryStrength = memoryStrength +1;
+    }
+       
+
+
+      console.log(memoryStrength, 'MEMORY STRENGTH>>>>>');
+    this.props.dispatch(fetchNextQuestion(headers, memoryStrength));
+    //console.log('NExt Question Async call made');
+}
     render() {
 
 
@@ -135,7 +158,7 @@ logOut() {
             <div className="dashboard">
                 <main className="main-img-section">
                 {this.showLabel()}
-                <button className={this.state.nextClass}>Next</button>
+                <button onClick={() => this.nextQuestion()} className={this.state.nextClass}>Next</button>
                 <button className="finish" onClick={() => this.logOut()}>Finish</button>
             <img src={require('../images/dothraki-main.jpg')} alt="Dothraki Horde"  className="main-img"/>
                 <FeedbackSection
