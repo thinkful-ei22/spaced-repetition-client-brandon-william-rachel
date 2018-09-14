@@ -6,9 +6,13 @@ import { fetchNextQuestion } from '../actions/questions-next';
 import './styles/dashboard.css';
 import { handleSubmit } from '../actions/scoring';
 export class UserInput extends React.Component {
-// constructor(props){
-//   super(props);
-// }
+constructor(props){
+  super(props);
+  this.state={
+    answerLabel: 'Answer',
+    labelColor: 'black'
+  }
+}
 
 handleUserInput(userInput){
   // console.log(userInput.toLowerCase(), 'USER INPUT TO COMPARE');
@@ -37,10 +41,7 @@ else {
       // this.showFinish();
       this.nextQuestion();
   });
-
-  
 }
-//console.log( 'STATE: USER INPUT', this.state);
 }
 }
 nextQuestion(){
@@ -64,18 +65,13 @@ render(){
   console.log(this.state);
   return (
     <section className="answer">
-    <form onSubmit={(e) => {
-      e.preventDefault();
-      this.props._onSubmit()}} className="submit-input">
-    <label className={this.props.labelColor}>{this.props.answerLabel} <br /> </label>
+    <label className={this.state.labelColor}>{this.state.answerLabel} <br /> </label>
     <input placeholder="Enter guess here" ref="userInput" />
-    <button onClick={()=>{   
-        //this.props.dispatch(handleSubmit(this.refs.userInput.value));
+    <button onClick={(e)=>{   
+      e.preventDefault();
+      this.props._onSubmit();
         this.handleUserInput(this.refs.userInput.value);
-       
-        
     } }>Submit</button>
-    </form>
     </section>
   );
 }
