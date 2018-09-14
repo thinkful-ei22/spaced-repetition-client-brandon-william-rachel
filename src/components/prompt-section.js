@@ -2,7 +2,7 @@ import React from 'react';
 //import { connect } from 'react-redux';
 
 export default class PromptSection extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             hintVisible: false
@@ -10,15 +10,13 @@ export default class PromptSection extends React.Component {
     }
 
 
-    code
-showHint(e) {
-    e.preventDefault();
-    this.setState({
-        hintVisible: !this.state.hintVisible
-    })
 
-}
-//this inside the constructor
+    showHint(e) {
+        e.preventDefault();
+        this.setState({
+            hintVisible: !this.state.hintVisible
+        })
+    }
 
 render() {
     //console.log(this.props._currentQuestion.hint);
@@ -34,13 +32,13 @@ if( this.state.hintVisible !== false){
 }
 
 
-return (
+        return (
 
-    <div className="prompt-section">
-        {Prompt}
-        <button id="hint-button" type="submit" onClick={this.showHint.bind(this)}>Hint</button>
-        {Hint}
-    </div>
-)
-}
+            <div className="prompt-section">
+                {Prompt}
+                <button id="hint-button" type="submit" onClick={this.showHint.bind(this)}>Hint</button>
+                {Hint}
+            </div>
+        )
+    }
 }

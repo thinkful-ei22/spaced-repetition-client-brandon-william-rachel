@@ -12,8 +12,9 @@ export class HeaderBar extends React.Component {
     }
 
     render() {
+        console.log(this.props,"=======")
         // Only render the log out button if we are logged in
-        let logOutButton, signUpButton, logInButton;
+        let logOutButton, signUpButton, logInButton, aboutToggle;
         if (this.props.loggedIn) {
             logOutButton = (
                 <button className="logout" onClick={() => this.logOut()}>Log out</button>
@@ -26,6 +27,9 @@ export class HeaderBar extends React.Component {
             logInButton =(
                 <button className="login">Log In</button>
                 );
+            aboutToggle =(
+                <button className="about" onClick={() => this.props.switchOverlay(true)}>About</button>
+            );
         }
         return (
             <section className="dash-header-bar">
@@ -33,6 +37,7 @@ export class HeaderBar extends React.Component {
                     <li><img src={require('../images/LearningDothraki.png')} alt="learn dothraki logo" className="dash-logo"/></li>
                     <Link to="/register"><li>{signUpButton}</li></Link>
                     <Link to="/login"><li>{logInButton}</li></Link>
+                    {aboutToggle}
                     {logOutButton}
                 </ul>
             </section>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 //import {fetchProtectedData} from '../actions/protected-data';
 import { fetchQuestion } from '../actions/question';
@@ -7,6 +7,7 @@ import { fetchQuestion } from '../actions/question';
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
 import FeedbackSection from './feedback-section';
+import DashHeaderBar from './dash-header-bar';
 import UserInput from './user-input';
 import './styles/dashboard.css';
 
@@ -14,9 +15,9 @@ import PromptSection from './prompt-section';
 
 
 export class Dashboard extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state ={
+        this.state = {
             answerLabel: '',
             labelColor: 'black',
             thisQuestionCorrect: false,
@@ -26,46 +27,47 @@ export class Dashboard extends React.Component {
             nextClass: 'hidden',
         }
     }
-     setScore(){
-         if (this.state.thisQuestionCorrect === true){
-             this.setState({
-                 totalQuestionsCorrect: this.state.totalQuestionsCorrect+1,
-                 totalQuestionsAsked: this.state.totalQuestionsAsked+1
-             }, 
-             function(){
-                 this.setState({
-                     accuracy: (this.state.totalQuestionsCorrect/this.state.totalQuestionsAsked)*100
-                 })
-             }
-                 );
-         }
-         else {
+
+    setScore() {
+        if (this.state.thisQuestionCorrect === true) {
+            this.setState({
+                totalQuestionsCorrect: this.state.totalQuestionsCorrect + 1,
+                totalQuestionsAsked: this.state.totalQuestionsAsked + 1
+            },
+                function () {
+                    this.setState({
+                        accuracy: (this.state.totalQuestionsCorrect / this.state.totalQuestionsAsked) * 100
+                    })
+                }
+            );
+        }
+        else {
 
             this.setState({
                 totalQuestionsAsked: this.state.totalQuestionsAsked + 1
-            },  function(){
+            }, function () {
                 this.setState({
-                    accuracy: (this.state.totalQuestionsCorrect/this.state.totalQuestionsAsked)*100
+                    accuracy: (this.state.totalQuestionsCorrect / this.state.totalQuestionsAsked) * 100
                 })
-            } );
-         }
-       
+            });
+        }
+
     }
-    
-
-    
-    componentDidUpdate(nextProps){
-        if (nextProps.userInput !== this.props.userInput){
-          
-            if (this.props.userInput !== ''){
 
 
-                if (this.props.userInput.toLowerCase() === this.props.currentQuestion.answer.toLowerCase()){
+
+    componentDidUpdate(nextProps) {
+        if (nextProps.userInput !== this.props.userInput) {
+
+            if (this.props.userInput !== '') {
+
+
+                if (this.props.userInput.toLowerCase() === this.props._currentQuestion.answer.toLowerCase()) {
                     this.setState({
                         thisQuestionCorrect: true,
-                        answerLabel:'Correct!',
-                        labelColor:'green'
-                    }, function(){
+                        answerLabel: 'Correct!',
+                        labelColor: 'green'
+                    }, function () {
                         this.setScore();
                         this.showFinish();
                     });
@@ -74,7 +76,7 @@ export class Dashboard extends React.Component {
                 else {
                     this.setState({
                         thisQuestionCorrect: false,
-                        answerLabel:'Incorrect',
+                        answerLabel: 'Incorrect',
                         labelColor: 'red'
                     }, function(){
                        // console.log(this.state.thisQuestionCorrect);
@@ -89,10 +91,10 @@ export class Dashboard extends React.Component {
         //const { username }= this.props;
         const headers = {
             'Authorization': 'Bearer ' + this.props.authToken,
-            'Content-Type' : 'application/json'
-          };
+            'Content-Type': 'application/json'
+        };
         this.props.dispatch(fetchQuestion(headers));
-        
+
         this.setState({
             answerLabel: 'Answer'
         });
@@ -104,7 +106,7 @@ export class Dashboard extends React.Component {
         }
         else {
             return <span id="percentage"> %</span>;
-        }           
+        }
     }
     showLabel() {
             return <UserInput _onSubmit={() => {
@@ -158,9 +160,9 @@ getNextQuestion(){
         //     hint: 'The Dothraki word for "stars" is "shieraki"',
         //     answer: 'Shieraki gori ha yeraan!'
         // }
-       
 
-      
+
+
         return (
             <div className="dashboard">
                 <main className="dash-main-img-section">
@@ -185,11 +187,9 @@ getNextQuestion(){
     }
 }
 
-// DEFAULT PROPS?? - is this where the correct answers go?
-
 const mapStateToProps = state => {
-    const {currentUser} = state.auth;
-    
+    const { currentUser } = state.auth;
+
     return {
         username: state.auth.currentUser.username,
         name: `${currentUser.firstname} ${currentUser.lastName}`,
