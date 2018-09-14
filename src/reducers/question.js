@@ -3,7 +3,8 @@ import { FETCH_NEXT_QUESTION_REQUEST, FETCH_NEXT_QUESTION_SUCCESS, FETCH_NEXT_QU
 const initialState = {
     loading: false,
     currentQuestion: null,
-    error: null
+    error: null,
+    
 }
 
 
@@ -28,12 +29,18 @@ export  default function questionReducer(state=initialState, action) {
         return Object.assign({}, state, {
             loading: true
         })
-    } else if( action.type===FETCH_NEXT_QUESTION_SUCCESS){
-        return Object.assign({}, state, {
-            loading: false
+    } 
+    
+    // else if( action.type===FETCH_NEXT_QUESTION_SUCCESS){
+    //     return Object.assign({}, state, {
+    //         loading: false,
+    //         //bc score is obj and we're grabbing properties stored in obj
+    //         score: action.score.score
             
-        })
-    } else if( action.type===FETCH_NEXT_QUESTION_ERROR){
+    //     })
+    // } 
+    
+    else if( action.type===FETCH_NEXT_QUESTION_ERROR){
         return Object.assign({}, state, {
             loading: false,
             error: action.error

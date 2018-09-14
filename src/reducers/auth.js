@@ -6,11 +6,13 @@ import {
     AUTH_ERROR
 } from '../actions/auth';
 
+import {  FETCH_NEXT_QUESTION_SUCCESS} from '../actions/questions-next';
 const initialState = {
     authToken: null, // authToken !== null does not mean it has been validated
     currentUser: null,
     loading: false,
-    error: null
+    error: null,
+
 };
 
 export default function reducer(state = initialState, action) {
@@ -33,6 +35,13 @@ export default function reducer(state = initialState, action) {
             loading: false,
             currentUser: action.currentUser
         });
+    } else if( action.type===FETCH_NEXT_QUESTION_SUCCESS){
+        return Object.assign({}, state, {
+            loading: false,
+            //bc score is obj and we're grabbing properties stored in obj
+            currentUser: Object.assign({}, state.currentUser, {score: action.score.score})
+            
+        })
     } else if (action.type === AUTH_ERROR) {
         return Object.assign({}, state, {
             loading: false,

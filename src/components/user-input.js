@@ -37,7 +37,10 @@ else {
       // this.showFinish();
       this.nextQuestion();
   });
+
+  
 }
+//console.log( 'STATE: USER INPUT', this.state);
 }
 }
 nextQuestion(){

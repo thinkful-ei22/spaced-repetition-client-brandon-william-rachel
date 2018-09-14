@@ -14,9 +14,9 @@ export const fetchNextQuestion = (headers, isCorrect) => (dispatch, getState)  =
             throw new Error(res.statusText);
         }
         return res.json()
-    }).then(() => {
+    }).then((score) => {
         console.log();
-        dispatch(fetchNextQuestionSuccess())
+        dispatch(fetchNextQuestionSuccess(score))
     }
         
     ).catch(err =>
@@ -31,9 +31,10 @@ export const fetchNextQuestionRequest = () => ({
 });
 
 export const FETCH_NEXT_QUESTION_SUCCESS = 'FETCH_NEXT_QUESTION_SUCCESS';
-export const fetchNextQuestionSuccess = () => ({
+export const fetchNextQuestionSuccess = (score) => ({
     //handleSuccess
     type: FETCH_NEXT_QUESTION_SUCCESS,
+    score
     //currentQuestion: question
 });
 
