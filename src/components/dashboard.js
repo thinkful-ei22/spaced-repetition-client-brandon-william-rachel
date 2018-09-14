@@ -8,7 +8,7 @@ import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
 import FeedbackSection from './feedback-section';
 import UserInput from './user-input';
-import './styles/app.css';
+import './styles/dashboard.css';
 
 import PromptSection from './prompt-section';
 
@@ -163,23 +163,23 @@ getNextQuestion(){
       
         return (
             <div className="dashboard">
-                <main className="main-img-section">
+                <main className="dash-main-img-section">
                 {this.showLabel()}
                 <button onClick={() => this.getNextQuestion()} className={this.state.nextClass}>Next</button>
-                <button className="finish" onClick={() => this.logOut()}>Finish</button>
-            <img src={require('../images/dothraki-main.jpg')} alt="Dothraki Horde"  className="main-img"/>
-                <FeedbackSection
+                <PromptSection currentQuestion={(!this.props.currentQuestion)  ?  'loading' : this.props.currentQuestion}/>
+            <img src={require('../images/dothraki-main.jpg')} alt="Dothraki Horde"  className="dash-main-img"/>
+                {/* <FeedbackSection
                     feedback={ this.props.feedback}
                     //feedback reducer info goes here?
-                />
+                /> */}
             </main>
                
-                
+            <button className="finish" onClick={() => this.logOut()}>Finish</button>
+
                 <div className="dashboard-name">Logged in as: {this.props.name}</div>
                 <div className="score">Word Accuracy: {this.showAccuracy()}</div>
                 
                 
-                <PromptSection currentQuestion={(!this.props.currentQuestion)  ?  'loading' : this.props.currentQuestion}/>
             </div>
         );
     }

@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 
 import { fetchNextQuestion } from '../actions/questions-next';
-import './styles/app.css';
+import './styles/dashboard.css';
 import { handleSubmit } from '../actions/scoring';
 export class UserInput extends React.Component {
 // constructor(props){

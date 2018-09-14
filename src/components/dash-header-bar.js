@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
 import {Link} from 'react-router-dom';
-import './styles/header-bar.css';
+import './styles/dash-header-bar.css';
 
 export class HeaderBar extends React.Component {
     logOut() {
@@ -28,9 +28,9 @@ export class HeaderBar extends React.Component {
                 );
         }
         return (
-            <section className="header-bar">
+            <section className="dash-header-bar">
                 <ul>
-                    <li><img src={require('../images/LearningDothraki.png')} alt="learn dothraki logo" className="logo"/></li>
+                    <li><img src={require('../images/LearningDothraki.png')} alt="learn dothraki logo" className="dash-logo"/></li>
                     <Link to="/register"><li>{signUpButton}</li></Link>
                     <Link to="/login"><li>{logInButton}</li></Link>
                     {logOutButton}
