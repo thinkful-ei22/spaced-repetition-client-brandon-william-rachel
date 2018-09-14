@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 //import {fetchProtectedData} from '../actions/protected-data';
 import { fetchQuestion } from '../actions/question';
-import { fetchNextQuestion } from '../actions/questions-next';
+//import { fetchNextQuestion } from '../actions/questions-next';
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
 import FeedbackSection from './feedback-section';
@@ -107,7 +107,12 @@ export class Dashboard extends React.Component {
         }           
     }
     showLabel() {
-            return <UserInput _isCorrect={this.state.thisQuestionCorrect} labelColor={this.state.labelColor} 
+            return <UserInput _onSubmit={() => {
+                
+                this.setScore();
+                this.showFinish();
+            }}
+                labelColor={this.state.labelColor} 
             answerLabel ={this.state.answerLabel} />;               
     }
 
@@ -121,7 +126,7 @@ logOut() {
     clearAuthToken();
 }
 
-nextQuestion(){
+getNextQuestion(){
     const headers = {
         'Authorization': 'Bearer ' + this.props.authToken,
         'Content-Type' : 'application/json'
@@ -139,8 +144,8 @@ nextQuestion(){
 
 
     //   console.log(memoryStrength, 'MEMORY STRENGTH>>>>>');
-    const isCorrect = this.state.thisQuestionCorrect;
-    this.props.dispatch(fetchNextQuestion(headers, isCorrect));
+    //const isCorrect = this.state.thisQuestionCorrect;
+    this.props.dispatch(fetchQuestion(headers));
     //console.log('NExt Question Async call made');
 }
     render() {
@@ -160,7 +165,7 @@ nextQuestion(){
             <div className="dashboard">
                 <main className="main-img-section">
                 {this.showLabel()}
-                <button onClick={() => this.nextQuestion()} className={this.state.nextClass}>Next</button>
+                <button onClick={() => this.getNextQuestion()} className={this.state.nextClass}>Next</button>
                 <button className="finish" onClick={() => this.logOut()}>Finish</button>
             <img src={require('../images/dothraki-main.jpg')} alt="Dothraki Horde"  className="main-img"/>
                 <FeedbackSection
