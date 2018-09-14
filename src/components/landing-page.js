@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import './styles/landing-page.css'
 import InfoModal from "./info-modal"
+import HeaderBar from "./header-bar"
 
 class LandingPage extends React.Component {
     constructor(props) {
@@ -10,6 +11,7 @@ class LandingPage extends React.Component {
         this.state = {
             overlay: false
         }
+        this.switchOverlay = this.switchOverlay.bind(this)
     }
     
 
@@ -30,24 +32,27 @@ class LandingPage extends React.Component {
 
     if (this.state.overlay === false) {
         return (
-            <div className="home">
+            
+            <div className="home" lang="en">
+            <HeaderBar switchOverlay={this.switchOverlay}/>
                 <main className="main-img-section-landing">
                     <img src={require('../images/dothrakhorses.jpg')} alt="Dothraki horses statue" className="main-img-landing" />
                     <li><img src={require('../images/LearningDothraki.png')} alt="learn dothraki logo" className="logo-landing" /></li>
                     <h2 className="headline-text-landing">Face the other bloodlords with confidence</h2>
-                    <a className="begin"><Link to="/register">BEGIN</Link></a>
+                    <button className="begin"><Link to="/register">BEGIN</Link></button>
                 </main>
             </div>
         )
     } else {
         return(
             <div className="home">
-            <InfoModal switchOverlay={this.props.switchOverlay}/>
+            <HeaderBar switchOverlay={this.switchOverlay}/>
+            <InfoModal switchOverlay={this.switchOverlay}/>
                 <main className="main-img-section-landing">
                     <img src={require('../images/dothrakhorses.jpg')} alt="Dothraki horses statue" className="main-img-landing" />
                     <li><img src={require('../images/LearningDothraki.png')} alt="learn dothraki logo" className="logo-landing" /></li>
                     <h2 className="headline-text">Face the other bloodlords with confidence</h2>
-                    <a className="begin"><Link to="/register">BEGIN</Link></a>
+                    <button className="begin"><Link to="/register">BEGIN</Link></button>
                 </main>
             </div>
         );
