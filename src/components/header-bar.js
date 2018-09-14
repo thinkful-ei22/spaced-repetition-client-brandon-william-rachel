@@ -27,7 +27,7 @@ export class HeaderBar extends React.Component {
                 <button className="login">Log In</button>
                 );
             aboutToggle =(
-                <a className="about"href="#" onClick={() => this.props.switchOverlay()}>About</a>
+                <a className="about"href="#" onClick={() => this.props.switchOverlay(true)}>About</a>
             )
         }
         return (
