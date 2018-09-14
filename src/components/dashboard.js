@@ -54,37 +54,37 @@ export class Dashboard extends React.Component {
     
 
     
-    componentDidUpdate(nextProps){
-        if (nextProps.userInput !== this.props.userInput){
+    // componentDidUpdate(nextProps){
+    //     if (nextProps.userInput !== this.props.userInput){
           
-            if (this.props.userInput !== ''){
+    //         if (this.props.userInput !== ''){
 
 
-                if (this.props.userInput.toLowerCase() === this.props.currentQuestion.answer.toLowerCase()){
-                    this.setState({
-                        thisQuestionCorrect: true,
-                        answerLabel:'Correct!',
-                        labelColor:'green'
-                    }, function(){
-                        this.setScore();
-                        this.showFinish();
-                    });
+    //             if (this.props.userInput.toLowerCase() === this.props.currentQuestion.answer.toLowerCase()){
+    //                 this.setState({
+    //                     thisQuestionCorrect: true,
+    //                     answerLabel:'Correct!',
+    //                     labelColor:'green'
+    //                 }, function(){
+    //                     this.setScore();
+    //                     this.showFinish();
+    //                 });
 
-                }
-                else {
-                    this.setState({
-                        thisQuestionCorrect: false,
-                        answerLabel:'Incorrect',
-                        labelColor: 'red'
-                    }, function(){
-                       // console.log(this.state.thisQuestionCorrect);
-                        this.setScore();
-                        this.showFinish();
-                    });
-                }
-            }
-        }
-    }
+    //             }
+    //             else {
+    //                 this.setState({
+    //                     thisQuestionCorrect: false,
+    //                     answerLabel:'Incorrect',
+    //                     labelColor: 'red'
+    //                 }, function(){
+    //                    // console.log(this.state.thisQuestionCorrect);
+    //                     this.setScore();
+    //                     this.showFinish();
+    //                 });
+    //             }
+    //         }
+    //     }
+    // }
     componentDidMount() {
         //const { username }= this.props;
         const headers = {
