@@ -100,12 +100,15 @@ export class Dashboard extends React.Component {
         //console.log()
     }
     showAccuracy() {
+        console.log('CURRENT SCORE______', this.props.currentUser.score);
         if (this.state.totalQuestionsAsked > 0) {
-            return <span id="percentage">{this.state.accuracy}%</span>;
+            //this.props.currentUser.score
+            
+            return <span id="percentage">{this.props.currentUser.score}</span>;
         }
         else {
-            return <span id="percentage"> %</span>;
-        }
+            return <span id="percentage"> </span>;
+        }           
     }
     showLabel() {
             return <UserInput _onSubmit={() => {
@@ -177,8 +180,9 @@ getNextQuestion(){
                
             <button className="finish" onClick={() => this.logOut()}>Finish</button>
 
-                <div className="dashboard-name">Logged in as: {this.props.username}</div>
-                <div className="score">Word Accuracy: {this.showAccuracy()}</div>
+                
+                <div className="dashboard-name">Logged in as: {this.props.name}</div>
+                <div className="score">Score: {this.showAccuracy()}</div>
                 
                 
             </div>
@@ -193,6 +197,7 @@ const mapStateToProps = state => {
         username: state.auth.currentUser.username,
         name: `${currentUser.firstName} ${currentUser.lastName}`,
         authToken: state.auth.authToken,
+        currentUser: state.auth.currentUser,
 
         currentQuestion: state.question.currentQuestion,
         
