@@ -1,3 +1,5 @@
+
+
 .black{
   color: black;
 }
@@ -23,8 +25,8 @@
 }
 .answer > label {
   position: absolute;
-width: 100%;
-text-align: center;
+  width: 100%;
+  text-align: center;
 }
 .answer > input{
   width: 58%;
@@ -33,7 +35,7 @@ text-align: center;
   margin-left: 4px;
   position: absolute;
 
-}
+} 
 .answer > button{
   position: absolute;
 left: 65%;

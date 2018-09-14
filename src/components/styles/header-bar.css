@@ -4,7 +4,7 @@
 ul {
   list-style-type: none;
   margin: 0;
-padding: 0;
+  padding: 0;
 
 }
 
@@ -21,6 +21,8 @@ button{
 
 .header-bar {
   display: flex;
+  background-color: #1D1707;
+  height: 60px
 }
 .logo{
   width: 50%;
