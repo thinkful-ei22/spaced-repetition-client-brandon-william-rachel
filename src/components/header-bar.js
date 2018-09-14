@@ -32,6 +32,7 @@ export class HeaderBar extends React.Component {
                 <ul>
                     <Link to="/register"><li>{signUpButton}</li></Link>
                     <Link to="/login"><li>{logInButton}</li></Link>
+                    <Link to="/about"><button>About</button></Link>
                     {logOutButton}
                 </ul>
             </section>
