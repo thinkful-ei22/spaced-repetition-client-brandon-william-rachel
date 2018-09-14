@@ -6,6 +6,7 @@ import { fetchQuestion } from '../actions/question';
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
 import FeedbackSection from './feedback-section';
+import DashHeaderBar from './dash-header-bar';
 import UserInput from './user-input';
 import './styles/dashboard.css';
 
@@ -25,6 +26,7 @@ export class Dashboard extends React.Component {
             nextClass: 'hidden',
         }
     }
+
     setScore() {
         if (this.state.thisQuestionCorrect === true) {
             this.setState({
@@ -117,6 +119,7 @@ export class Dashboard extends React.Component {
         this.props.dispatch(clearAuth());
         clearAuthToken();
     }
+    
     render() {
 
 
@@ -132,6 +135,9 @@ export class Dashboard extends React.Component {
 
         return (
             <div className="dashboard">
+            <section className="">
+
+            </section>
                 <main className="main-img-section">
                     {this.showLabel()}
                     <button className={this.state.nextClass}>Next</button>

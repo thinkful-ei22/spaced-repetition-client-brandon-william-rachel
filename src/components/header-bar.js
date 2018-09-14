@@ -13,7 +13,7 @@ export class HeaderBar extends React.Component {
 
     render() {
         // Only render the log out button if we are logged in
-        let logOutButton, signUpButton, logInButton;
+        let logOutButton, signUpButton, logInButton, aboutToggle;
         if (this.props.loggedIn) {
             logOutButton = (
                 <button className="logout" onClick={() => this.logOut()}>Log out</button>
@@ -26,13 +26,16 @@ export class HeaderBar extends React.Component {
             logInButton =(
                 <button className="login">Log In</button>
                 );
+            aboutToggle =(
+                <a className="about"href="#" onClick={() => this.props.switchOverlay()}>About</a>
+            )
         }
         return (
             <section className="header-bar">
                 <ul>
                     <Link to="/register"><li>{signUpButton}</li></Link>
                     <Link to="/login"><li>{logInButton}</li></Link>
-                    <Link to="/about"><button>About</button></Link>
+                    {aboutToggle}
                     {logOutButton}
                 </ul>
             </section>

@@ -10,6 +10,7 @@ import {refreshAuthToken} from '../actions/auth';
 import { LoginPage } from './login-page';
 
 export class App extends React.Component {
+
     componentDidUpdate(prevProps) {
         if (!prevProps.loggedIn && this.props.loggedIn) {
             // When we are logged in, refresh the auth token periodically
@@ -38,11 +39,17 @@ export class App extends React.Component {
 
         clearInterval(this.refreshInterval);
     }
+    switchOverlay(){
+        const currentOverlay = this.state.overlay;
+        this.setState({
+          overlay : !currentOverlay
+        });
+      }
 
     render() {
         return (
             <div className="app">
-                <HeaderBar />
+                {/* <HeaderBarswitchOverlay={() => this.switchOverlay()} overlay={this.state.overlay}/> */}
                 <Route exact path="/" component={LandingPage} />
                 <Route exact path="/dashboard" component={Dashboard} />
                 <Route exact path="/register" component={RegistrationPage} />
@@ -54,7 +61,8 @@ export class App extends React.Component {
 
 const mapStateToProps = state => ({
     hasAuthToken: state.auth.authToken !== null,
-    loggedIn: state.auth.currentUser !== null
+    loggedIn: state.auth.currentUser !== null,
+    overlay: false
 });
 
 // Deal with update blocking - https://reacttraining.com/react-router/web/guides/dealing-with-update-blocking

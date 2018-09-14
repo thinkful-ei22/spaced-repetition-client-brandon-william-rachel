@@ -27,7 +27,7 @@ button{
 .logo{
   width: 50%;
 }
-.login, .signup, .logout{
+.login, .signup, .logout .about{
   margin-top: 20px;
   margin-right: 10px;
   float: right;

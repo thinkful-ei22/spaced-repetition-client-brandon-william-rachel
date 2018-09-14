@@ -1,0 +1,50 @@
+/* mobile/base */
+
+/* elements */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+}
+
+li {
+  display: inline;
+  text-align: center;
+}
+button{
+  border: 1px solid black;
+
+}
+
+/* Classes */
+
+.header-bar {
+  display: flex;
+  height:100px;
+  color: black;
+}
+.logo{
+  width: 50%;
+}
+.login, .signup, .logout .about{
+  margin-top: 20px;
+  margin-right: 10px;
+  float: right;
+  border-radius: 8px;
+
+}
+
+.login{
+margin-right: 5px;
+}
+
+  /* tablet */
+  @media all and (min-width: 768px) {
+  
+  }
+  
+  /* desktop */
+  @media all and (min-width: 1024px) {
+  
+  }
