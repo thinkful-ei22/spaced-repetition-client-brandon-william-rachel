@@ -1,25 +1,20 @@
 import React from 'react';
-import {connect} from 'react-redux';
-
+import { connect } from 'react-redux';
+import './styles/login-page.css';
 import LoginForm from './login-form';
 
 export function LoginPage(props) {
-    
+
     return (
-        <div>
-            <div className="login-page">
-        <main className="main-img-section">
 
-            <h2 className="headline-text">Learn the language of the Horselords</h2>
+                <main className="main-img-section">
+                    <img src={require('../images/dothrakhorses.jpg')} alt="Dothraki horses statue" className="main-img darken" />
+                    <div className="login-form-container">
+                        <LoginForm />
+                    </div>
+                </main>
 
-            <img src={require('../images/dothraki-main.jpg')} alt="Dothraki Horde"  className="main-img"/>
-            <div className="register">
-            <LoginForm/>
 
-            </div>
-            </main>
-                   </div>
-        </div>
     );
 }
 

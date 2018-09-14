@@ -21,8 +21,8 @@ button{
 
 .header-bar {
   display: flex;
-  background-color: #1D1707;
-  height: 100px
+  height:100px;
+  color: black;
 }
 .logo{
   width: 50%;
@@ -57,3 +57,5 @@ margin-right: 5px;
   @media all and (min-width: 1200px) {
   
   } */
+
+

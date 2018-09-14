@@ -1,6 +1,6 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {Redirect} from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Redirect, Link } from 'react-router-dom';
 
 import RegistrationForm from './registration-form';
 import './styles/registration-page.css';
@@ -12,18 +12,12 @@ export function RegistrationPage(props) {
         return <Redirect to="/" />;
     }
     return (
-        <div className="registration">
-        <main className="main-img-section">
-        <h2 className="headline-text">Learn the language of the Horselords</h2>
-
-
-            <img src={require('../images/dothraki-main.jpg')} alt="Dothraki Horde"  className="main-img"/>
-            <div className="register">
-                        <RegistrationForm />
-
-            </div>
+            <main className="main-img-section">
+                <img src={require('../images/dothrakhorses.jpg')} alt="Dothraki horses statue" className="main-img darken" />
+                <div className="registeration-form-container">
+                    <RegistrationForm />
+                </div>
             </main>
-                   </div>
     );
 }
 

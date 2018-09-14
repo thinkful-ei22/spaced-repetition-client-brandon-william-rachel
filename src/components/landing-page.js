@@ -14,7 +14,7 @@ export function LandingPage(props) {
         <div className="home">
 
             <main className="main-img-section">
-                <img src={require('../images/dothrakhorses.jpg')} alt="Dothraki horses statue" className="main-img darken" />
+                <img src={require('../images/dothrakhorses.jpg')} alt="Dothraki horses statue" className="main-img" />
                 <li><img src={require('../images/LearningDothraki.png')} alt="learn dothraki logo" className="logo"/></li>
                 <h2 className="headline-text">Face the other bloodlords with confidence</h2>
                 <a className="begin"><Link to="/register">BEGIN</Link></a>
