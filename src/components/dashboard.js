@@ -177,7 +177,7 @@ getNextQuestion(){
                
             <button className="finish" onClick={() => this.logOut()}>Finish</button>
 
-                <div className="dashboard-name">Logged in as: {this.props.name}</div>
+                <div className="dashboard-name">Logged in as: {this.props.username}</div>
                 <div className="score">Word Accuracy: {this.showAccuracy()}</div>
                 
                 
@@ -191,7 +191,7 @@ const mapStateToProps = state => {
 
     return {
         username: state.auth.currentUser.username,
-        name: `${currentUser.firstname} ${currentUser.lastName}`,
+        name: `${currentUser.firstName} ${currentUser.lastName}`,
         authToken: state.auth.authToken,
 
         currentQuestion: state.question.currentQuestion,
