@@ -1,5 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 //import {fetchProtectedData} from '../actions/protected-data';
 import { fetchQuestion } from '../actions/question';
@@ -7,15 +7,15 @@ import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
 import FeedbackSection from './feedback-section';
 import UserInput from './user-input';
-import './styles/app.css';
+import './styles/dashboard.css';
 
 import PromptSection from './prompt-section';
 
 
 export class Dashboard extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state ={
+        this.state = {
             answerLabel: '',
             labelColor: 'black',
             thisQuestionCorrect: false,
@@ -25,46 +25,46 @@ export class Dashboard extends React.Component {
             nextClass: 'hidden',
         }
     }
-     setScore(){
-         if (this.state.thisQuestionCorrect === true){
-             this.setState({
-                 totalQuestionsCorrect: this.state.totalQuestionsCorrect+1,
-                 totalQuestionsAsked: this.state.totalQuestionsAsked+1
-             }, 
-             function(){
-                 this.setState({
-                     accuracy: (this.state.totalQuestionsCorrect/this.state.totalQuestionsAsked)*100
-                 })
-             }
-                 );
-         }
-         else {
+    setScore() {
+        if (this.state.thisQuestionCorrect === true) {
+            this.setState({
+                totalQuestionsCorrect: this.state.totalQuestionsCorrect + 1,
+                totalQuestionsAsked: this.state.totalQuestionsAsked + 1
+            },
+                function () {
+                    this.setState({
+                        accuracy: (this.state.totalQuestionsCorrect / this.state.totalQuestionsAsked) * 100
+                    })
+                }
+            );
+        }
+        else {
 
             this.setState({
                 totalQuestionsAsked: this.state.totalQuestionsAsked + 1
-            },  function(){
+            }, function () {
                 this.setState({
-                    accuracy: (this.state.totalQuestionsCorrect/this.state.totalQuestionsAsked)*100
+                    accuracy: (this.state.totalQuestionsCorrect / this.state.totalQuestionsAsked) * 100
                 })
-            } );
-         }
-       
+            });
+        }
+
     }
-    
-
-    
-    componentDidUpdate(nextProps){
-        if (nextProps.userInput !== this.props.userInput){
-          
-            if (this.props.userInput !== ''){
 
 
-                if (this.props.userInput.toLowerCase() === this.props._currentQuestion.answer.toLowerCase()){
+
+    componentDidUpdate(nextProps) {
+        if (nextProps.userInput !== this.props.userInput) {
+
+            if (this.props.userInput !== '') {
+
+
+                if (this.props.userInput.toLowerCase() === this.props._currentQuestion.answer.toLowerCase()) {
                     this.setState({
                         thisQuestionCorrect: true,
-                        answerLabel:'Correct!',
-                        labelColor:'green'
-                    }, function(){
+                        answerLabel: 'Correct!',
+                        labelColor: 'green'
+                    }, function () {
                         this.setScore();
                         this.showFinish();
                     });
@@ -73,9 +73,9 @@ export class Dashboard extends React.Component {
                 else {
                     this.setState({
                         thisQuestionCorrect: false,
-                        answerLabel:'Incorrect',
+                        answerLabel: 'Incorrect',
                         labelColor: 'red'
-                    }, function(){
+                    }, function () {
                         console.log(this.state.thisQuestionCorrect);
                         this.setScore();
                         this.showFinish();
@@ -87,10 +87,10 @@ export class Dashboard extends React.Component {
     componentDidMount() {
         const headers = {
             'Authorization': 'Bearer ' + this.props.authToken,
-            'Content-Type' : 'application/json'
-          };
+            'Content-Type': 'application/json'
+        };
         this.props.dispatch(fetchQuestion(headers));
-        
+
         this.setState({
             answerLabel: 'Answer'
         });
@@ -102,21 +102,21 @@ export class Dashboard extends React.Component {
         }
         else {
             return <span id="percentage"> %</span>;
-        }           
+        }
     }
     showLabel() {
-            return <UserInput labelColor={this.state.labelColor} answerLabel ={this.state.answerLabel} />;               
+        return <UserInput labelColor={this.state.labelColor} answerLabel={this.state.answerLabel} />;
     }
 
     showFinish() {
         this.setState({
             nextClass: 'next'
-        })               
-}
-logOut() {
-    this.props.dispatch(clearAuth());
-    clearAuthToken();
-}
+        })
+    }
+    logOut() {
+        this.props.dispatch(clearAuth());
+        clearAuthToken();
+    }
     render() {
 
 
@@ -127,38 +127,29 @@ logOut() {
         //     hint: 'The Dothraki word for "stars" is "shieraki"',
         //     answer: 'Shieraki gori ha yeraan!'
         // }
-       
 
-      
+
+
         return (
             <div className="dashboard">
                 <main className="main-img-section">
-                {this.showLabel()}
-                <button className={this.state.nextClass}>Next</button>
-                <button className="finish" onClick={() => this.logOut()}>Finish</button>
-            <img src={require('../images/dothraki-main.jpg')} alt="Dothraki Horde"  className="main-img"/>
-                <FeedbackSection
-                    feedback={ this.props.feedback}
-                    //feedback reducer info goes here?
-                />
-            </main>
-               
-                
+                    {this.showLabel()}
+                    <button className={this.state.nextClass}>Next</button>
+                    <button className="finish" onClick={() => this.logOut()}>Finish</button>
+                    <img src={require('../images/dothraki-main.jpg')} alt="Dothraki Horde" className="main-img" />
+                    <FeedbackSection feedback={this.props.feedback} />
+                    <PromptSection _currentQuestion={(!this.props._currentQuestion) ? 'loading' : this.props._currentQuestion} />
+                </main>
                 <div className="dashboard-name">Logged in as: {this.props.name}</div>
                 <div className="score">Word Accuracy: {this.showAccuracy()}</div>
-                
-                
-                <PromptSection _currentQuestion={(!this.props._currentQuestion)  ?  'loading' : this.props._currentQuestion}/>
             </div>
         );
     }
 }
 
-// DEFAULT PROPS?? - is this where the correct answers go?
-
 const mapStateToProps = state => {
-    const {currentUser} = state.auth;
-    
+    const { currentUser } = state.auth;
+
     return {
         username: state.auth.currentUser.username,
         name: `${currentUser.firstname} ${currentUser.lastName}`,
