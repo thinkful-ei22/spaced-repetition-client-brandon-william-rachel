@@ -21,6 +21,7 @@
 }
 
 .logo {
+  display: none;
   position: absolute;
   top: 320px;
   left: 690px;
@@ -30,6 +31,8 @@
   transform: translate(-50%, -50%);
 }
 .headline-text{
+  display: none;
+
   position: absolute;
   top: 410px;
   left: 690px;
@@ -42,14 +45,19 @@
   text-shadow: 0 1px 0 black;
   }
 
+.begin{
+  display: none;
 
-a:link {
-  all: unset;
   position: absolute;
+  font-size: 100px;
+
   left: 550px;
   top: 550px;
+}
+a:link {
+  /* all: unset; */
+  
   text-decoration: none;
-  font-size: 100px;
   color: inherit;
   text-shadow: 0 1px 0 white;
   font-family: 'Open Sans', sans-serif;
@@ -79,6 +87,8 @@ a:active{
 }
 
 .title2 {
+  display: none;
+
   background-color: #998568;
   margin: 50px 50px;
   font-family: 'Open Sans', sans-serif;

@@ -10,14 +10,26 @@
 .hidden{
   display: none;
 }
+.main-img-section{
+  margin-bottom: 2px;
+  text-align: center;
+  width: 100%;
+  /* If you want to change the text to white
+  background: linear-gradient(
+    rgba(20,20,20, .5), 
+    rgba(20,20,20, .5)); */
+
+
+}
 .answer{
   position: absolute;
   background-color: white;
   opacity: .8;
    top: 50%;
   left: 50%;
-  /* transform: translate(-50%, -50%); */
+   transform: translate(-50%, -50%);
   border: 1px solid black;
+  z-index: 5;
 }
 .answer > label {
   position: absolute;

@@ -5,6 +5,7 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  float: right;
 
 }
 
@@ -21,7 +22,7 @@ button{
 
 .header-bar {
   display: flex;
-
+  justify-content: flex-end;
 }
 .logo{
   width: 50%;
@@ -29,7 +30,6 @@ button{
 .login, .signup, .logout{
   margin-top: 20px;
   margin-right: 10px;
-  float: right;
   border-radius: 8px;
 
 }
