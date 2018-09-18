@@ -22,7 +22,7 @@ export class Dashboard extends React.Component {
             accuracy: 0,
         }
     }
-
+ 
 
     componentDidMount() {
         //const { username }= this.props;
