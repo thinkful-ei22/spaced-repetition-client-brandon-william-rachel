@@ -7,6 +7,7 @@
 }
 .red{
   color: red;
+  font-size: 12px;
 }
 .hidden{
   display: none;
@@ -35,7 +36,7 @@
   
 }
 .prompt-section > h3 {
-  font-size: 15px;
+  font-size: 14px;
   text-align: center;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -62,6 +63,7 @@
 width: 100%;
 text-align: center;
 
+
 }
 .answer > input{
   width: 58%;
@@ -76,17 +78,22 @@ text-align: center;
 left: 65%;
 top: 29px;
 border-radius: 8px;
+
 }
 .next{
   position: absolute;
   z-index: 1;
   border-radius: 8px;
-top: 210px;
-left: 85%;
+top: 190px;
+width: 15%;
+height: 20px;
+
+left: 82%;
 }
 .finish{
   position: relative;
   left: 40%; 
+  margin-bottom: 10px;
 }
 .dashboard-name, .score{
   text-align: center;
@@ -105,6 +112,9 @@ left: 85%;
       left: 15%;
       top: 185px;
     }
+    .next{
+    top: 215px;
+    }
   }
   /* iPhone 6/7/8/X */
 
@@ -120,6 +130,9 @@ left: 85%;
       left: 15%;
       top: 195px;
     }
+    .next{
+      top: 225px;
+      }
   }
 
   /* Pixel 2/2 XL */
@@ -136,6 +149,9 @@ left: 85%;
       left: 15%;
       top: 220px;
     }
+    .next{
+      top: 250px;
+      }
   }
    /* iPhone 6/7/8 Plus */
 
@@ -159,6 +175,9 @@ left: 85%;
       position: relative;
       left: 45%; 
     }
+    .next{
+      top: 250px;
+      }
 
   }
   /* iphone 5/SE landscape */
@@ -203,11 +222,10 @@ height: 220px;
     border-radius: 8px;
     }
     .next{
-      position: absolute;
-      z-index: 1;
-      border-radius: 8px;
-    top: 210px;
-    left: 85%;
+   
+    top: 221px;
+    left: 83%;
+    width: 13%
     }
     .finish{
       position: relative;
@@ -260,12 +278,11 @@ height: 262px;
     border-radius: 8px;
     }
     .next{
-      position: absolute;
-      z-index: 1;
-      border-radius: 8px;
-    top: 210px;
-    left: 85%;
-    }
+   
+      top: 221px;
+      left: 83%;
+      width: 13%
+      }
     .finish{
       position: relative;
       left: 45%; 
@@ -377,8 +394,9 @@ height: 262px;
         position: absolute;
         z-index: 1;
         border-radius: 8px;
-      top: 210px;
+      top: 305px;
       left: 85%;
+      width: 12%;
       }
       .finish{
         position: relative;
@@ -390,7 +408,7 @@ height: 262px;
     }
 
     /* iPhone 6/7/8 Plus landscape */
-    @media all and (min-width: 731px) and (max-width: 736px) and (orientation: landscape) {
+    @media all and (min-width: 732px) and (max-width: 736px) and (orientation: landscape) {
       .dash-main-img-section{
   height: 300px;
       }
@@ -434,8 +452,9 @@ height: 262px;
         position: absolute;
         z-index: 1;
         border-radius: 8px;
-      top: 210px;
+      top: 305px;
       left: 85%;
+      width: 12%;
       }
       .finish{
         position: relative;
@@ -471,6 +490,9 @@ height: 262px;
           left: 15%;
           top: 455px;
         }
+        .red{
+          font-size: 16px;
+        }
         .answer > input{
           width: 75%;
           top: 29px;
@@ -489,8 +511,9 @@ height: 262px;
           position: absolute;
           z-index: 1;
           border-radius: 8px;
-        top: 210px;
+        top: 485px;
         left: 85%;
+        width: 12%;
         }
         .finish{
           position: relative;
@@ -546,8 +569,9 @@ height: 262px;
     position: absolute;
     z-index: 1;
     border-radius: 8px;
-  top: 210px;
+  top: 274px;
   left: 85%;
+  width: 12%;
   }
   .finish{
     position: relative;
@@ -603,8 +627,9 @@ height: 262px;
       position: absolute;
       z-index: 1;
       border-radius: 8px;
-    top: 210px;
+    top: 274px;
     left: 85%;
+    width: 12%;
     }
     .finish{
       position: relative;
@@ -638,9 +663,11 @@ height: 262px;
         position: relative;
         left: 45.5%;
         top: 10px;
+        width: 12%;
+        height: 25px;
       }
       .answer > label {
-        font-size: 30px;
+        font-size: 25px;
       }
       .answer{
         position: absolute;
@@ -656,27 +683,33 @@ height: 262px;
       .answer  > input{
         width: 95%;
         top: 45px;
-        height: 14px;
+        height: 20px;
         margin-left: 12px;
         position: absolute;
       
       }
       .answer > button{
         position: absolute;
-      left: 45.5%;
-      top: 80px;
+      left: 43%;
+      top: 75px;
       border-radius: 8px;
+      height: 25px;
+
       }
       .next{
         position: absolute;
         z-index: 1;
         border-radius: 8px;
-      top: 210px;
+      top: 565px;
       left: 85%;
+      width: 12%;
+      height: 25px;
       }
       .finish{
         position: relative;
-        left: 45.5%; 
+        left: 46.5%; 
+        height: 25px;
+
       }
       .dashboard-name, .score{
         text-align: center;
@@ -711,27 +744,27 @@ height: 262px;
     .answer  > input{
       width: 95%;
       top: 45px;
-      height: 14px;
+      height: 20px;
       margin-left: 17px;
       position: absolute;
     
     }
     .answer  > button{
       position: absolute;
-    left: 45.5%;
-    top: 80px;
+    left: 46%;
+    top: 75px;
     border-radius: 8px;
     }
     .next{
       position: absolute;
       z-index: 1;
       border-radius: 8px;
-    top: 210px;
+    top: 560px;
     left: 85%;
     }
     .finish{
       position: relative;
-      left: 45.5%; 
+      left: 47%; 
     }
     .dashboard-name, .score{
       text-align: center;
@@ -760,8 +793,10 @@ height: 262px;
     }
     .prompt-section > button {
       position: relative;
-      left: 45.5%;
+      left: 44.5%;
       top: 10px;
+      width: 12%;
+      height: 25px;
     }
     .answer  > label {
       font-size: 30px;
@@ -780,14 +815,14 @@ height: 262px;
     .answer  > input{
       width: 95%;
       top: 45px;
-      height: 14px;
+      height: 24px;
       margin-left: 17px;
       position: absolute;
     
     }
     .answer  > button{
       position: absolute;
-    left: 45.5%;
+    left: 43%;
     top: 80px;
     border-radius: 8px;
     }
@@ -795,13 +830,17 @@ height: 262px;
       position: absolute;
       z-index: 1;
       border-radius: 8px;
-    top: 210px;
+    top: 535px;
     left: 85%;
+    width: 10%;
     }
     .finish{
       position: relative;
-      left: 46.5%;
+      left: 43.5%;
       margin-bottom: 15px; 
+      width: 10%;
+      height: 25px;
+      top: 8px;
     }
     .dashboard-name, .score{
       text-align: center;
@@ -820,15 +859,19 @@ height: 262px;
   .prompt-section{
     height: 105px;
     width: 66%;
-    left: 16%;
+    left: 18%;
   }
   .prompt-section > h3 {
     font-size: 30px;
   }
   .prompt-section > button {
     position: relative;
-    left: 45.5%;
+    left: 44%;
     top: 10px;
+    width: 12%;
+    height: 35px;
+    font-size: 16px;
+
   }
   .answer  > label {
     font-size: 30px;
@@ -841,7 +884,7 @@ height: 262px;
     width: 66%;
     border: 1px solid black;
     z-index: 1;
-    left: 16%;
+    left: 18%;
     top: 750px;
   }
   .answer  > input{
@@ -854,21 +897,29 @@ height: 262px;
   }
   .answer > button{
     position: absolute;
-  left: 45.5%;
-  top: 80px;
+  left: 43%;
+  top: 75px;
   border-radius: 8px;
+  height: 25px;
+  width: 12%;
+  font-size: 16px;
   }
   .next{
     position: absolute;
     z-index: 1;
     border-radius: 8px;
-  top: 210px;
+  top: 795px;
   left: 85%;
+  width: 12%;
+  height: 25px;
   }
   .finish{
     position: relative;
-    left: 46.5%;
+    left: 45%;
     margin-bottom: 15px; 
+    height: 25px;
+    width: 10%;
+    top: 7px;
   }
   .dashboard-name, .score{
     text-align: center;

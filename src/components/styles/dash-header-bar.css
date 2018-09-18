@@ -95,9 +95,10 @@ button{
 /* iPad */
     @media all and (min-width: 737px) and (max-width: 768px) {
       .logout{
-        margin-top: 45px;
-       
-      
+        margin-top: 43px;
+       width: 12%;
+       height: 25px;
+      font-size: 16px;
       }
     }
 
@@ -132,7 +133,10 @@ button{
   }
   .logout{
     margin-top: 18px;
-   
+  
+    width: 12%;
+    height: 25px;
+   font-size: 16px;
   
   }
     }
@@ -144,7 +148,10 @@ button{
   }
   .logout{
     margin-top: 18px;
-
+    width: 12%;
+    height: 25px;
+   font-size: 16px;
+  
   
   }
     }
@@ -155,29 +162,18 @@ button{
     width: 30%;
   }
   .logout{
-    margin-top: 48px;
-    margin-right: 10px;
-    margin-left: 20px;
+    margin-top: 40px;
+    position: relative;
+    left: 7%;
 
-    width: 200px;
-  height: 30px;
-  font-size: 20px;
+    width: 12%;
+    height: 25px;
+   font-size: 16px;
+  
   }
     }
 
 
-@media all and (min-width: 321px) and (max-width: 360px) {
-  
-}
 
-  /* tablet */
-  @media all and (min-width: 768px) {
-  
-  }
-  
-  /* desktop */
-  @media all and (min-width: 1024px) {
-  
-  }
   
   

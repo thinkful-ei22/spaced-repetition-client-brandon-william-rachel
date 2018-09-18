@@ -1,5 +1,5 @@
 import { FETCH_QUESTION_REQUEST, FETCH_QUESTION_SUCCESS, FETCH_QUESTION_ERROR} from '../actions/question';
-import { FETCH_NEXT_QUESTION_REQUEST, FETCH_NEXT_QUESTION_SUCCESS, FETCH_NEXT_QUESTION_ERROR} from '../actions/questions-next';
+import { FETCH_NEXT_QUESTION_REQUEST, FETCH_NEXT_QUESTION_ERROR} from '../actions/questions-next';
 const initialState = {
     loading: false,
     currentQuestion: null,
