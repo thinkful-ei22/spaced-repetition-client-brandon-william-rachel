@@ -1,9 +1,12 @@
-form {
-  width: 400px;
+.registration-form {
+  width: 75%;
   padding: 1em;
   border: 1px solid #CCC;
   border-radius: 1em;
   background-color: #998568;
+  position: relative;
+  left: 7%;
+  margin-bottom: 10px;
 }
 
 form div + div {
@@ -12,13 +15,14 @@ form div + div {
 
 label {
   display: inline-block;
-  width: 90px;
-  text-align: right;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
 }
 
 input, textarea {
   font: 1em sans-serif;
-  width: 300px;
+  width: 100%;
   box-sizing: border-box;
   border: 1px solid #999;
 }
@@ -38,4 +42,35 @@ textarea {
 
 button {
   margin-left: .5em;
+}
+
+  /* iPad landscape */
+  @media all and (orientation: landscape) and (min-width: 824px) and (max-width: 1024px)  {
+    .registration-form {
+    bottom: 518px;
+    opacity: .9;
+    }
+  }
+
+  /* iPad Pro  */
+  @media all and (min-width: 824px) and (max-width: 1024px)  {
+    .registration-form {
+      left: 11%;
+    }
+  }
+  /*  Desktop */
+@media all and (min-width: 1025px) and (max-width: 1280px) {
+  .registration-form {
+    left: 11%;
+    bottom: 618px;
+    opacity: .9;
+    }
+  }
+  /* iPad Pro landscape */
+@media all and (min-width: 1281px) and (orientation: landscape) {
+  .registration-form {
+    left: 11%;
+    bottom: 618px;
+    opacity: .9;
+    }
 }
