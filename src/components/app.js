@@ -6,6 +6,7 @@ import LandingPage from './landing-page';
 import Dashboard from './dashboard';
 import RegistrationPage from './registration-page';
 import {refreshAuthToken} from '../actions/auth';
+
 import LoginPage from './login-page';
 
 export class App extends React.Component {
