@@ -2,7 +2,6 @@
 	width: 100%;
 	height: 100%;
 	color: #fff;
-	
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -17,6 +16,7 @@
 	height: auto;
 	width: 90%;
 	border-radius: 3px;
+
 	top: 15%;
 	margin: auto auto;
 	border: 1px solid rgba(0,0,0,0.1);
@@ -79,10 +79,7 @@
 	font-size: 13px;
 	text-align: center;
 }
-.close{
-	position: relative;
-	left: 39%;
-}
+
 /* S5 */
 @media all and (min-width: 321px) and (max-width: 360px) {	
 	.content > div p {
@@ -108,10 +105,7 @@
 		font-size: 13px;
 		text-align: center;
 	}
-	.close{
-		position: relative;
-		left: 40%;
-	}
+	
 }
 /* iPhone 6/7/8 */
 
@@ -139,9 +133,7 @@
 		font-size: 13px;
 		text-align: center;
 	}
-	.close{
-		left: 41%;
-	}
+
 }
 /* iPhone X */
 @media only screen and (min-width: 361px) and (max-width: 375px) and (-webkit-min-device-pixel-ratio: 3){
@@ -168,9 +160,7 @@
 		font-size: 13px;
 		text-align: center;
 	}
-	.close{
-		left: 41%;
-	}
+	
 }
 
 /* Pixel 2 */
@@ -199,9 +189,7 @@
 		font-size: 13px;
 		text-align: center;
 	}
-	.close{
-		left: 41%;
-	}
+	
 }
 
 /* Pixel 2 XL*/
@@ -229,9 +217,7 @@
 		font-size: 13px;
 		text-align: center;
 	}
-	.close{
-		left: 41%;
-	}
+	
 }
 /* iPhone 6/7/8 Plus */
 
@@ -259,19 +245,29 @@
 		font-size: 13px;
 		text-align: center;
 	}
-	.close{
-		left: 41%;
-	}
+
 }
 
 /* iphone 5/SE landscape */
 @media all and (min-width: 415px) and (max-width: 568px) and (orientation: landscape) {
+	.overlay{
+		top: -11px;
+	}
+	.content{
+		height: 80%;
+
+	}
+	.content h3{
+		font-size: 17px;
+	}
 	.content > div p {
 		margin: 0;
 		padding: 10px 0;
 		line-height: 2em;
-		text-align: justify;
-		font-size: 15px;
+		text-align: center;
+		font-size: 10px;
+		position: relative;
+		bottom: 20px;
 	}
 	
 	
@@ -281,26 +277,47 @@
 		display: block;	
 		list-style-type: disc;
 		line-height: 1.5em;
-		font-size: 13px;
+		font-size: 9px;
+		position: relative;
+		bottom: 25px;
+		right: 3%;
+		
 	
+	}
+	.headline-text{
+		display: none;
 	}
 	
 	.content > p {
-		font-size: 13px;
+		font-size: 10px;
 		text-align: center;
+		position: relative;
+		bottom: 60px;
 	}
 	.close{
-		left: 45%;
+		position: relative;
+		bottom: 65px;
 	}
 }
 /* S5 landscape */
 @media all and (min-width: 569px) and (max-width: 640px) and (orientation: landscape) {
+	.overlay{
+		top: -11px;
+	}
+	.content{
+		height: 80%;
+	}
+	.content h3{
+		font-size: 17px;
+	}
 	.content > div p {
 		margin: 0;
 		padding: 10px 0;
 		line-height: 2em;
 		text-align: center;
-		font-size: 20px;
+		font-size: 11px;
+		position: relative;
+		bottom: 20px;
 	}
 	
 	
@@ -310,26 +327,47 @@
 		display: block;	
 		list-style-type: disc;
 		line-height: 1.5em;
-		font-size: 15px;
+		font-size: 11px;
+		position: relative;
+		bottom: 25px;
+		right: 3%;
+		
 	
+	}
+	.headline-text{
+		display: none;
 	}
 	
 	.content > p {
-		font-size: 13px;
+		font-size: 10px;
 		text-align: center;
+		position: relative;
+		bottom: 60px;
 	}
 	.close{
-		left: 45%;
+		position: relative;
+		bottom: 65px;
 	}
 }
 /* iPhone 6/7/8 landscape */
 @media all and (min-width: 641px) and (max-width: 667px) and (orientation: landscape) {
+	.overlay{
+		top: -7px;
+	}
+	.content{
+		height: 80%;
+	}
+	.content h3{
+		font-size: 17px;
+	}
 	.content > div p {
 		margin: 0;
 		padding: 10px 0;
 		line-height: 2em;
 		text-align: center;
-		font-size: 20px;
+		font-size: 11px;
+		position: relative;
+		bottom: 20px;
 	}
 	
 	
@@ -339,26 +377,47 @@
 		display: block;	
 		list-style-type: disc;
 		line-height: 1.5em;
-		font-size: 16px;
+		font-size: 11px;
+		position: relative;
+		bottom: 25px;
+		right: 3%;
+		
 	
+	}
+	.headline-text{
+		display: none;
 	}
 	
 	.content > p {
-		font-size: 13px;
+		font-size: 10px;
 		text-align: center;
+		position: relative;
+		bottom: 60px;
 	}
 	.close{
-		left: 45%;
+		position: relative;
+		bottom: 65px;
 	}
 }
 /* Pixel 2 landscape */
 @media all and (min-width: 668px) and (max-width: 731px) and (orientation: landscape) {
+	.overlay{
+		top: 4px;
+	}
+	.content{
+		height: 80%;
+	}
+	.content h3{
+		font-size: 17px;
+	}
 	.content > div p {
 		margin: 0;
 		padding: 10px 0;
 		line-height: 2em;
 		text-align: center;
-		font-size: 20px;
+		font-size: 13px;
+		position: relative;
+		bottom: 20px;
 	}
 	
 	
@@ -368,26 +427,47 @@
 		display: block;	
 		list-style-type: disc;
 		line-height: 1.5em;
-		font-size: 19px;
+		font-size: 13px;
+		position: relative;
+		bottom: 25px;
+		right: 3%;
+		
 	
+	}
+	.headline-text{
+		display: none;
 	}
 	
 	.content > p {
 		font-size: 13px;
 		text-align: center;
+		position: relative;
+		bottom: 60px;
 	}
 	.close{
-		left: 45%;
+		position: relative;
+		bottom: 65px;
 	}
 }
   /* iPhone 6/7/8 Plus landscape */
   @media all and (min-width: 732px) and (max-width: 736px) and (orientation: landscape) {
+		.overlay{
+			top: 6px;
+		}
+		.content{
+			height: 80%;
+		}
+		.content h3{
+			font-size: 17px;
+		}
 		.content > div p {
 			margin: 0;
 			padding: 10px 0;
 			line-height: 2em;
 			text-align: center;
-			font-size: 20px;
+			font-size: 13px;
+			position: relative;
+			bottom: 20px;
 		}
 		
 		
@@ -397,16 +477,26 @@
 			display: block;	
 			list-style-type: disc;
 			line-height: 1.5em;
-			font-size: 20px;
+			font-size: 13px;
+			position: relative;
+			bottom: 25px;
+			right: 3%;
+			
 		
+		}
+		.headline-text{
+			display: none;
 		}
 		
 		.content > p {
 			font-size: 13px;
 			text-align: center;
+			position: relative;
+			bottom: 60px;
 		}
 		.close{
-			left: 47%;
+			position: relative;
+			bottom: 65px;
 		}
   }
   /* iPad */
@@ -437,16 +527,30 @@
 	.close{
 		left: 47%;
 	}
+	.content button {
+		font-size: 20px;
+	}
 }
 
  /* iPhone X landscape */
  @media all and (min-width: 769px) and (max-width: 812px) and (orientation: landscape) {
+	.overlay{
+		top: -14px;
+	}
+	.content{
+		height: 85%;
+	}
+	.content h3{
+		font-size: 17px;
+	}
 	.content > div p {
 		margin: 0;
 		padding: 10px 0;
 		line-height: 2em;
 		text-align: center;
-		font-size: 20px;
+		font-size: 13px;
+		position: relative;
+		bottom: 20px;
 	}
 	
 	
@@ -456,26 +560,47 @@
 		display: block;	
 		list-style-type: disc;
 		line-height: 1.5em;
-		font-size: 24px;
+		font-size: 13px;
+		position: relative;
+		bottom: 25px;
+		right: 3%;
+		
 	
+	}
+	.headline-text{
+		display: none;
 	}
 	
 	.content > p {
-		font-size: 18px;
+		font-size: 13px;
 		text-align: center;
+		position: relative;
+		bottom: 60px;
 	}
 	.close{
-		left: 48%;
+		position: relative;
+		bottom: 65px;
 	}
  }
 /* Pixel 2 XL landscape */
 @media all and (min-width: 813px) and (max-width: 823px) and (orientation: landscape) {
+	.overlay{
+		top: -14px;
+	}
+	.content{
+		height: 85%;
+	}
+	.content h3{
+		font-size: 20px;
+	}
 	.content > div p {
 		margin: 0;
 		padding: 10px 0;
 		line-height: 2em;
 		text-align: center;
-		font-size: 20px;
+		font-size: 13px;
+		position: relative;
+		bottom: 20px;
 	}
 	
 	
@@ -485,28 +610,49 @@
 		display: block;	
 		list-style-type: disc;
 		line-height: 1.5em;
-		font-size: 24px;
+		font-size: 13px;
+		position: relative;
+		bottom: 25px;
+		right: 3%;
+		
 	
+	}
+	.headline-text{
+		display: none;
 	}
 	
 	.content > p {
-		font-size: 18px;
+		font-size: 13px;
 		text-align: center;
+		position: relative;
+		bottom: 60px;
 	}
 	.close{
-		left: 48%;
+		position: relative;
+		bottom: 65px;
 	}
 }
  /* iPad landscape */
  @media all and (orientation: landscape) and (min-width: 824px) and (max-width: 1024px)  {
 	
 	
+	.overlay{
+		top: -45px;
+	}
+	.content{
+		height: 90%;
+	}
+	.content h3{
+		font-size: 26px;
+	}
 	.content > div p {
 		margin: 0;
 		padding: 10px 0;
 		line-height: 2em;
 		text-align: center;
-		font-size: 28px;
+		font-size: 24px !important;
+		position: relative;
+		bottom: 20px;
 	}
 	
 	
@@ -516,21 +662,36 @@
 		display: block;	
 		list-style-type: disc;
 		line-height: 1.5em;
-		font-size: 28px;
+		font-size: 24px !important;
+		position: relative;
+		bottom: 25px;
+		right: 3%;
+		
 	
+	}
+	.headline-text{
+		display: none;
 	}
 	
 	.content > p {
-		font-size: 21px;
+		font-size: 24px;
 		text-align: center;
+		position: relative;
+		bottom: 60px;
 	}
 	.close{
-		left: 48%;
+		position: relative;
+		bottom: 65px;
+		left: 0 !important;
+		font-size: 20px;
 	}
 }
  /* iPad Pro  */
  @media all and (min-width: 824px) and (max-width: 1024px)  {
-  
+	
+	.content h3{
+		font-size: 31px;
+	}
 	.content > div p {
 		margin: 0;
 		padding: 10px 0;
@@ -551,15 +712,20 @@
 	}
 	
 	.content > p {
-		font-size: 21px;
+		font-size: 28px;
 		text-align: center;
 	}
 	.close{
 		left: 48%;
+		font-size: 24px;
 	}
 }
 /*  Desktop */
 @media all and (min-width: 1025px) and (max-width: 1280px) {
+	.content h3{
+		font-size: 31px;
+	}
+
 	.content > div p {
 		margin: 0;
 		padding: 10px 0;
@@ -575,26 +741,38 @@
 		display: block;	
 		list-style-type: disc;
 		line-height: 1.5em;
-		font-size: 20px;
+		font-size: 24px;
 	
 	}
 	
 	.content > p {
-		font-size: 21px;
+		font-size: 24px;
 		text-align: center;
 	}
 	.close{
 		left: 48%;
+		font-size: 20px;
 	}
 }
 /* iPad Pro landscape */
 @media all and (min-width: 1281px) and (orientation: landscape) {
+	.overlay{
+		top: -45px;
+	}
+	.content{
+		height: 80%;
+	}
+	.content h3{
+		font-size: 41px;
+	}
 	.content > div p {
 		margin: 0;
 		padding: 10px 0;
 		line-height: 2em;
 		text-align: center;
-		font-size: 28px;
+		font-size: 30px !important;
+		position: relative;
+		bottom: 20px;
 	}
 	
 	
@@ -604,15 +782,27 @@
 		display: block;	
 		list-style-type: disc;
 		line-height: 1.5em;
-		font-size: 20px;
+		font-size: 30px !important;
+		position: relative;
+		bottom: 25px;
+		right: 3%;
+		
 	
+	}
+	.headline-text{
+		display: none;
 	}
 	
 	.content > p {
-		font-size: 21px;
+		font-size: 30px;
 		text-align: center;
+		position: relative;
+		bottom: 60px;
 	}
 	.close{
-		left: 48%;
+		position: relative;
+		bottom: 65px;
+		left: 0 !important;
+		font-size: 20px;
 	}
 }

@@ -1,5 +1,6 @@
 .registration-form {
   width: 75%;
+  height: 285px;
   padding: 1em;
   border: 1px solid #CCC;
   border-radius: 1em;
@@ -17,14 +18,27 @@ label {
   display: inline-block;
   width: 100%;
   text-align: center;
-  margin-top: 10px;
+position: relative;
+bottom: 8px;
 }
 
+.form-input{
+position: relative;
+height: 27px;
+bottom: 22px;
+}
+.form-error{
+  position: relative;
+  color: darkred;
+  top: 12px;
+  font-size: 10px;
+}
 input, textarea {
   font: 1em sans-serif;
   width: 100%;
   box-sizing: border-box;
   border: 1px solid #999;
+  margin-top: 4px;
 }
 
 input:focus, textarea:focus {
@@ -43,20 +57,272 @@ textarea {
 button {
   margin-left: .5em;
 }
+/* Pixel 2 */
 
+@media all and (min-width: 376px) and (max-width: 411px) {
+
+  .registration-form {
+    left: 9%;
+  }
+  .form-error{
+    font-size: 11px;
+  }
+  label{
+    bottom: 8px;
+  }
+}
+/* iPhone 6/7/8 Plus */
+
+@media all and (min-width: 412px) and (max-width: 414px) {
+  .registration-form {
+    left: 9%;
+  }
+  .form-error{
+  
+    font-size: 11px;
+  }
+  label{
+    bottom: 8px;
+  }
+}
+/* iphone 5/SE landscape */
+@media all and (min-width: 415px) and (max-width: 568px) and (orientation: landscape) {
+  .registration-form {
+    bottom: 260px;
+    left: 9%;
+    height: 240px;
+    opacity: .9;
+  }
+  .form-input{
+    height: 22px;
+    bottom: 29px;
+    }
+    label{
+      font-size: 12px;
+    }
+    input{
+      position: relative;
+      top: 0;
+    }
+    .form-error{
+      top: 16px;
+      font-size: 10px;
+    }
+}
+/* S5 landscape */
+@media all and (min-width: 569px) and (max-width: 640px) and (orientation: landscape) {
+  .registration-form {
+    bottom: 288px;
+    left: 9%;
+    height: 240px;
+    opacity: .9;
+  }
+  .form-input{
+    height: 22px;
+    bottom: 29px;
+    }
+    label{
+      font-size: 12px;
+      bottom: 10px;
+    }
+    input{
+      position: relative;
+      top: 0;
+    }
+    .form-error{
+      top: 16px;
+      font-size: 10px;
+    }
+}
+/* iPhone 6/7/8 landscape */
+@media all and (min-width: 641px) and (max-width: 667px) and (orientation: landscape) {
+  .registration-form {
+    bottom: 288px;
+    left: 9%;
+    height: 240px;
+    opacity: .9;
+  }
+  .form-input{
+    height: 22px;
+    bottom: 29px;
+    }
+    label{
+      font-size: 12px;
+      bottom: 10px;
+    }
+    input{
+      position: relative;
+      top: 0;
+    }
+    .form-error{
+      top: 16px;
+      font-size: 10px;
+    }
+}
+/* Pixel 2 landscape */
+@media all and (min-width: 668px) and (max-width: 731px) and (orientation: landscape) {
+  .registration-form {
+    bottom: 288px;
+    left: 9%;
+    height: 240px;
+    opacity: .9;
+  }
+  .form-input{
+    height: 22px;
+    bottom: 29px;
+    }
+    label{
+      font-size: 12px;
+      bottom: 10px;
+    }
+    input{
+      position: relative;
+      top: 0;
+    }
+    .form-error{
+      top: 16px;
+      font-size: 10px;
+    }
+}
+/* iPhone 6/7/8 Plus landscape */
+@media all and (min-width: 732px) and (max-width: 736px) and (orientation: landscape) {
+  .registration-form {
+    bottom: 300px;
+    left: 9%;
+    height: 240px;
+    opacity: .9;
+  }
+  .form-input{
+    height: 22px;
+    bottom: 29px;
+    }
+    label{
+      font-size: 12px;
+      bottom: 10px;
+    }
+    input{
+      position: relative;
+      top: 0;
+    }
+    .form-error{
+      top: 16px;
+      font-size: 10px;
+    }
+}
+ /* iPad */
+ @media all and (min-width: 737px) and (max-width: 768px) {
+  .registration-form {
+    left: 10%;
+    height: 360px;
+    opacity: .9;
+  }
+  .form-input{
+    height: 36px;
+    bottom: 29px;
+    }
+    label{
+      font-size: 20px !important;
+    }
+    
+    input{
+      position: relative;
+      top: 8px;
+    }
+    .form-error{
+      top: 20px !important;
+      font-size: 16px;
+    }
+    .registration-form button {
+      font-size: 15px;
+      margin-left: 0;
+    }
+ }
+ /* iPhone X landscape */
+ @media all and (min-width: 769px) and (max-width: 812px) and (orientation: landscape) {
+  .registration-form {
+    bottom: 290px;
+    left: 9%;
+    height: 240px;
+    opacity: .9;
+  }
+  .form-input{
+    height: 22px;
+    bottom: 29px;
+    }
+    label{
+      font-size: 12px;
+      bottom: 10px;
+    }
+    input{
+      position: relative;
+      top: 0;
+    }
+    .form-error{
+      top: 16px;
+      font-size: 10px;
+    }
+ }
+ /* Pixel 2 XL landscape */
+@media all and (min-width: 813px) and (max-width: 823px) and (orientation: landscape) {
+  .registration-form {
+    bottom: 320px;
+    left: 9%;
+    height: 270px;
+    opacity: .9;
+  }
+  .form-input{
+    height: 27px;
+    bottom: 29px;
+    }
+    label{
+      font-size: 12px;
+    }
+    input{
+      position: relative;
+      top: 4px;
+    }
+    .form-error{
+      top: 17px;
+      font-size: 10px;
+    }
+}
   /* iPad landscape */
   @media all and (orientation: landscape) and (min-width: 824px) and (max-width: 1024px)  {
     .registration-form {
     bottom: 518px;
     opacity: .9;
+    left: 10% !important;
     }
+  
   }
 
   /* iPad Pro  */
   @media all and (min-width: 824px) and (max-width: 1024px)  {
     .registration-form {
-      left: 11%;
+      left: 12%;
+      height: 360px;
+      opacity: .9;
     }
+    .form-input{
+      height: 36px;
+      bottom: 29px;
+      }
+      label{
+        font-size: 21px !important;
+      }
+      
+      input{
+        position: relative;
+        top: 8px;
+      }
+      .form-error{
+        top: 18px !important;
+        font-size: 17px;
+      }
+      .registration-form button {
+        font-size: 15px;
+        margin-left: 0;
+      }
   }
   /*  Desktop */
 @media all and (min-width: 1025px) and (max-width: 1280px) {
@@ -70,7 +336,28 @@ button {
 @media all and (min-width: 1281px) and (orientation: landscape) {
   .registration-form {
     left: 11%;
+    height: 360px;
     bottom: 618px;
     opacity: .9;
+    }
+    .form-input{
+      height: 36px;
+      bottom: 29px;
+      }
+    label{
+      font-size: 21px !important;
+    }
+    
+    input{
+      position: relative;
+      top: 8px;
+    }
+    .form-error{
+      top: 18px !important;
+      font-size: 17px;
+    }
+    .registration-form button {
+      font-size: 15px;
+      margin-left: 0;
     }
 }

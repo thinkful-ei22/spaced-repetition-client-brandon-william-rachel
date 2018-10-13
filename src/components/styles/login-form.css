@@ -5,7 +5,7 @@
   border-radius: 1em;
   background-color: #998568;
   position: relative;
-  left: 9%;
+  left: 7.5%;
   margin-bottom: 10px;
 }
 
@@ -19,7 +19,10 @@ label {
   text-align: center;
   margin-top: 10px;
 }
-
+.login-form .form-error{
+  position: relative;
+  top: 0px;
+}
 input, textarea {
   font: 1em sans-serif;
   width: 100%;
@@ -43,6 +46,7 @@ textarea {
 button {
   margin-left: .5em;
 }
+
 /* S5 */
 @media all and (min-width: 321px) and (max-width: 360px) {
   .login-form {
@@ -88,30 +92,59 @@ button {
 
 /* iphone 5/SE landscape */
 @media all and (min-width: 415px) and (max-width: 568px) and (orientation: landscape) {
-  .login-form {
-    left: 9%;
+  .login-form-container {
+    position: relative;
+    bottom: 225px;
+    opacity: .9;
+  }
+  .login-form{
+    position: relative;
+    left: 11%
   }
 }
 /* S5 landscape */
 @media all and (min-width: 569px) and (max-width: 640px) and (orientation: landscape) {
-  .login-form {
-    left: 9%;
+  .login-form-container {
+    position: relative;
+    bottom: 225px;
+    opacity: .9;
+  }
+  .login-form{
+    position: relative;
+    left: 9%
   }
 }
 /* iPhone 6/7/8 landscape */
 @media all and (min-width: 641px) and (max-width: 667px) and (orientation: landscape) {
-  .login-form {
-    left: 9.5%;
+  .login-form-container {
+    position: relative;
+    bottom: 225px;
+    opacity: .9;
+  }
+  .login-form{
+    position: relative;
+    left: 9.5%
   }
 }
 /* Pixel 2 landscape */
 @media all and (min-width: 668px) and (max-width: 731px) and (orientation: landscape) {
-  .login-form {
+  .login-form-container {
+    position: relative;
+    bottom: 225px;
+    opacity: .9;
+  }
+  .login-form{
+    position: relative;
     left: 10%;
   }
 }
   /* iPhone 6/7/8 Plus landscape */
   @media all and (min-width: 732px) and (max-width: 736px) and (orientation: landscape) {
+    .login-form-container {
+      position: relative;
+      bottom: 225px;
+      opacity: .9;
+    }
     .login-form {
       left: 10%;
     }
@@ -121,16 +154,29 @@ button {
   .login-form {
     left: 10%;
   }
+  .login-form .form-error{
+    top: 0 !important;
+  }
 }
 
  /* iPhone X landscape */
  @media all and (min-width: 769px) and (max-width: 812px) and (orientation: landscape) {
+  .login-form-container {
+    position: relative;
+    bottom: 225px;
+    opacity: .9;
+  }
   .login-form {
     left: 10.5%;
   }
  }
 /* Pixel 2 XL landscape */
 @media all and (min-width: 813px) and (max-width: 823px) and (orientation: landscape) {
+  .login-form-container {
+    position: relative;
+    bottom: 225px;
+    opacity: .9;
+  }
   .login-form {
     left: 10.5%;
   }
@@ -138,9 +184,16 @@ button {
 
 /* iPad landscape */
 @media all and (orientation: landscape) and (min-width: 824px) and (max-width: 1024px)  {
+   .login-form-container {
+    position: relative;
+    bottom: 470px;
+    opacity: .9;
+  }
   .login-form {
-  bottom: 518px;
-  opacity: .9;
+    left: 10.5%;
+  }
+  .login-form .form-error{
+    top: 0 !important;
   }
 }
 
@@ -148,6 +201,10 @@ button {
 @media all and (min-width: 824px) and (max-width: 1024px)  {
   .login-form {
     left: 11%;
+  }
+  .login-form .form-error{
+    top: 0 !important;
+    font-size: 18px;
   }
 }
 /*  Desktop */
@@ -160,9 +217,15 @@ button {
 }
 /* iPad Pro landscape */
 @media all and (min-width: 1281px) and (orientation: landscape) {
-.login-form {
-  left: 11%;
-  bottom: 618px;
-  opacity: .9;
+  .login-form-container {
+    position: relative;
+    bottom: 470px;
+    opacity: .9;
+  }
+  .login-form {
+    left: 10.5%;
+  }
+  .login-form .form-error{
+    top: 0 !important;
   }
 }

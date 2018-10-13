@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import RegistrationForm from './registration-form';
 import HeaderBar from "./header-bar"
-import InfoModal from "./info-modal"
 
 import './styles/registration-page.css';
 
@@ -11,17 +10,10 @@ class RegistrationPage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            overlay: false
-        }
-        this.switchOverlay = this.switchOverlay.bind(this)
+            aboutClass: 'hide',
+            homeClass: 'about'
+                }
     }
-
-    switchOverlay(bool) {
-        // const currentOverlay = this.state.overlay;
-        this.setState({
-          overlay : bool
-        })
-      }
 
       render() {
     // If we are logged in (which happens automatically when registration
@@ -30,28 +22,16 @@ class RegistrationPage extends React.Component {
         return <Redirect to="/" />;
     }
 
-    if (this.state.overlay === false) {
     return (
         <div className="registration-page">
-        <HeaderBar switchOverlay={this.switchOverlay} />
+        <HeaderBar aboutClass={this.state.aboutClass} homeClass ={this.state.homeClass} />
             <main className="main-reg-section">
                 <img src={require('../images/dothrakhorses.jpg')} alt="Dothraki horses statue" className="main-img" />
                     <RegistrationForm />
             </main>
             </div>
     )
-} else {
-    return(
-        <div className="registration-page">
-        <HeaderBar switchOverlay={this.switchOverlay} />
-        <InfoModal switchOverlay={this.switchOverlay}/>
-            <main className="main-reg-section">
-                <img src={require('../images/dothrakhorses.jpg')} alt="Dothraki horses statue" className="main-img" />
-                    <RegistrationForm />
-            </main>
-            </div>
-        );
-    }
+
 }
 }
 

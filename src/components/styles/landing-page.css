@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
+.hide {
+  display : none;
+}
 .home {
  background-color: #1D1707;
 height: 568px;
@@ -8,7 +11,7 @@ height: 568px;
   margin-bottom: 2px;
   position: relative;
   text-align: center;
-
+width: 100%;
   /* If you want to change the text to white
   background: linear-gradient(
     rgba(20,20,20, .5), 
@@ -122,95 +125,125 @@ color: green;
 /* iphone 5/SE landscape */
 @media all and (min-width: 415px) and (max-width: 568px) and (orientation: landscape) {
   .home {
-    height: 590px;
+    height: 320px;
+    overflow: hidden;
+    }
+    .main-img-section-landing{
+      height: 95%;
+    }
+    .main-img-landing{
+      height: 100%;
     }
     .headline-text-landing{
-      bottom: 170px;
+      bottom: 220px;
     }
     .logo-landing {
      
-      bottom: 150px;
+      bottom: 200px;
     }
     .begin {
       position: relative;
-      bottom: 134px;
-      
+      bottom: 234px;
     }
 }
 
 /* S5 landscape */
 @media all and (min-width: 569px) and (max-width: 640px) and (orientation: landscape) {
   .home {
-    height: 648px;
+    height: 360px;
+    overflow: hidden;
+    }
+    .main-img-section-landing{
+      height: 95%;
+    }
+    .main-img-landing{
+      height: 100%;
     }
     .headline-text-landing{
-      bottom: 250px;
+      bottom: 220px;
     }
     .logo-landing {
      
-      bottom: 223px;
+      bottom: 200px;
     }
     .begin {
       position: relative;
-      bottom: 134px;
-      
+      bottom: 234px;
     }
 }
 
   /* iPhone 6/7/8 landscape */
   @media all and (min-width: 641px) and (max-width: 667px) and (orientation: landscape) {
     .home {
-      height: 671px;
+      height: 375px;
+      overflow: hidden;
+      }
+      .main-img-section-landing{
+        height: 95%;
+      }
+      .main-img-landing{
+        height: 100%;
       }
       .headline-text-landing{
-        bottom: 250px;
+        bottom: 220px;
       }
       .logo-landing {
        
-        bottom: 223px;
+        bottom: 200px;
       }
       .begin {
         position: relative;
-        bottom: 134px;
-        
+        bottom: 234px;
       }
   }
 
   /* Pixel 2 landscape */
   @media all and (min-width: 668px) and (max-width: 731px) and (orientation: landscape) {
     .home {
-      height: 724px;
+      height: 411px;
+      overflow: hidden;
+      }
+      .main-img-section-landing{
+        height: 95%;
+      }
+      .main-img-landing{
+        height: 100%;
       }
       .headline-text-landing{
-        bottom: 250px;
+        bottom: 220px;
       }
       .logo-landing {
        
-        bottom: 223px;
+        bottom: 200px;
       }
       .begin {
         position: relative;
-        bottom: 134px;
-        
+        bottom: 234px;
       }
   }
 
   /* iPhone 6/7/8 Plus landscape */
   @media all and (min-width: 732px) and (max-width: 736px) and (orientation: landscape) {
     .home {
-      height: 726px;
+      height: 414px;
+      overflow: hidden;
+      }
+      .main-img-section-landing{
+        height: 95%;
+      }
+      .main-img-landing{
+        height: 100%;
       }
       .headline-text-landing{
-        bottom: 250px;
+        bottom: 220px;
       }
       .logo-landing {
        
-        bottom: 223px;
+        bottom: 200px;
       }
       .begin {
         position: relative;
-        bottom: 134px;
-        
+        bottom: 234px;
       }
   }
 
@@ -229,51 +262,83 @@ color: green;
     .begin {
       position: relative;
       bottom: 134px;
-      
+      font-size: 20px;
     }
     }
 
     /* iPhone X landscape */
 @media all and (min-width: 769px) and (max-width: 812px) and (orientation: landscape) {
   .home {
-    height: 812px;
+    height: 375px;
+    overflow: hidden;
+    }
+    .main-img-section-landing{
+      height: 95%;
+    }
+    .main-img-landing{
+      height: 100%;
     }
     .headline-text-landing{
-      bottom: 250px;
+      bottom: 270px;
     }
     .logo-landing {
      
-      bottom: 223px;
+      bottom: 250px;
     }
     .begin {
       position: relative;
-      bottom: 134px;
-      
+      bottom: 264px;
     }
 }
 
 /* Pixel 2 XL landscape */
 @media all and (min-width: 813px) and (max-width: 823px) and (orientation: landscape) {
   .home {
-    height: 812px;
+    height: 411px;
+    overflow: hidden;
+    }
+    .main-img-section-landing{
+      height: 95%;
+    }
+    .main-img-landing{
+      height: 100%;
     }
     .headline-text-landing{
-      bottom: 250px;
+      bottom: 270px;
     }
     .logo-landing {
      
-      bottom: 223px;
+      bottom: 250px;
     }
     .begin {
       position: relative;
-      bottom: 134px;
-      
+      bottom: 264px;
     }
 }
 
   /* iPad landscape */
   @media all and (orientation: landscape) and (min-width: 824px) and (max-width: 1024px)  {
-
+    .home {
+      height: 768px !important;
+      overflow: hidden;
+      }
+      .main-img-section-landing{
+        height: 95%;
+      }
+      .main-img-landing{
+        height: 100%;
+      }
+      .headline-text-landing{
+        bottom: 370px !important;
+      }
+      .logo-landing {
+       
+        bottom: 350px !important;
+      }
+      .begin {
+        position: relative;
+        bottom: 364px !important;
+      }
   }
   
 
@@ -287,7 +352,7 @@ color: green;
       }
       .logo-landing {
        
-        bottom: 345px;
+        bottom: 223px;
       }
       .begin {
         position: relative;
@@ -329,28 +394,25 @@ color: green;
 /* iPad Pro landscape */
 @media all and (min-width: 1281px) and (orientation: landscape) {
   .home {
-    height: 1024px;
+    height: 1024px !important;
     overflow: hidden;
     }
+    .main-img-section-landing{
+      height: 95%;
+    }
+    .main-img-landing{
+      height: 100%;
+    }
     .headline-text-landing{
-      bottom: 620px;
+      bottom: 470px !important;
     }
     .logo-landing {
      
-      bottom: 610px;
+      bottom: 450px !important;
     }
     .begin {
       position: relative;
-      bottom: 634px;
-      font-size: 20px;
-    }
-    .main-img-section-landing{
-      margin-bottom: 2px;
-      position: relative;
-      text-align: center;
-      height: 300px;
-    }
-    .main-img-landing {
-      width: 100%;
+      bottom: 464px !important;
+      font-size: 30px;
     }
 }
