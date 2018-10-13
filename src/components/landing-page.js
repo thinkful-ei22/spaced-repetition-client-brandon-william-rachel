@@ -48,7 +48,7 @@ class LandingPage extends React.Component {
     } else {
         return(
             <div className="home">
-            <HeaderBar switchOverlay={this.switchOverlay}/>
+            <HeaderBar switchOverlay={this.switchOverlay } homeClass ={this.state.homeClass}/>
                 <main className="main-img-section-landing">
                     <img src={require('../images/dothrakhorses.jpg')} alt="Dothraki horses statue" className="main-img-landing" />
                     <img src={require('../images/LearningDothraki.png')} alt="learn dothraki logo" className="logo-landing" />
