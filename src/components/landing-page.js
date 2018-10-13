@@ -9,7 +9,9 @@ class LandingPage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            overlay: false
+            overlay: false,
+            aboutClass: 'about',
+            homeClass: 'hide'
         }
         this.switchOverlay = this.switchOverlay.bind(this)
     }
@@ -34,10 +36,10 @@ class LandingPage extends React.Component {
         return (
             
             <div className="home" lang="en">
-            <HeaderBar switchOverlay={this.switchOverlay}/>
+            <HeaderBar aboutClass={this.state.aboutClass} homeClass ={this.state.homeClass} switchOverlay={this.switchOverlay}/>
                 <main className="main-img-section-landing">
                     <img src={require('../images/dothrakhorses.jpg')} alt="Dothraki horses statue" className="main-img-landing" />
-                    <li><img src={require('../images/LearningDothraki.png')} alt="learn dothraki logo" className="logo-landing" /></li>
+                    <img src={require('../images/LearningDothraki.png')} alt="learn dothraki logo" className="logo-landing" />
                     <h2 className="headline-text-landing">Face the other bloodlords with confidence</h2>
                     <button className="begin"><Link to="/register">BEGIN</Link></button>
                 </main>
@@ -47,12 +49,13 @@ class LandingPage extends React.Component {
         return(
             <div className="home">
             <HeaderBar switchOverlay={this.switchOverlay}/>
-            <InfoModal switchOverlay={this.switchOverlay}/>
                 <main className="main-img-section-landing">
                     <img src={require('../images/dothrakhorses.jpg')} alt="Dothraki horses statue" className="main-img-landing" />
-                    <li><img src={require('../images/LearningDothraki.png')} alt="learn dothraki logo" className="logo-landing" /></li>
-                    <h2 className="headline-text">Face the other bloodlords with confidence</h2>
+                    <img src={require('../images/LearningDothraki.png')} alt="learn dothraki logo" className="logo-landing" />
+                    <h2 className="headline-text-landing">Face the other bloodlords with confidence</h2>
                     <button className="begin"><Link to="/register">BEGIN</Link></button>
+                    <InfoModal switchOverlay={this.switchOverlay}/>
+
                 </main>
             </div>
         );
