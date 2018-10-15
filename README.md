@@ -1,6 +1,6 @@
 Learn Dothraki
 
-https://intense-falls-81480.herokuapp.com/
+https://learndothraki.herokuapp.com/
 
 Overview
 
