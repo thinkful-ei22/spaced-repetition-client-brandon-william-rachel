@@ -128,7 +128,7 @@ color: green;
 
  @media all and (min-width: 412px) and (max-width: 414px) {
   .home {
-    height: 672px;
+    height: 661px;
     }
     .headline-text-landing{
       bottom: 170px;
@@ -278,7 +278,7 @@ color: green;
 /* iPad */
 @media all and (min-width: 737px) and (max-width: 768px) {
   .home {
-    height: 930px;
+    height: 929px;
     }
     .headline-text-landing{
       bottom: 250px;
@@ -299,6 +299,7 @@ color: green;
   .home {
     height: 375px;
     overflow: hidden;
+    
     }
     .main-img-section-landing{
       height: 95%;
