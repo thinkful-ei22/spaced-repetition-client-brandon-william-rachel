@@ -118,7 +118,7 @@ button {
 @media all and (min-width: 641px) and (max-width: 667px) and (orientation: landscape) {
   .login-form-container {
     position: relative;
-    bottom: 225px;
+    bottom: 205px;
     opacity: .9;
   }
   .login-form{

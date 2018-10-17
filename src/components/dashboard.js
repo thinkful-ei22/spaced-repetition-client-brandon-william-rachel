@@ -42,12 +42,9 @@ export class Dashboard extends React.Component {
 
     showAccuracy() {
         console.log('CURRENT SCORE______', this.props.currentUser.score);
-        if (this.state.totalQuestionsAsked > 0) {
-            return <span id="percentage">{this.props.currentUser.score}</span>;
-        }
-        else {
-            return <span id="percentage"> </span>;
-        }           
+        console.log('totalQuestionsAsked', this.state.totalQuestionsAsked);
+            console.log('show percentage');
+            return <span id="percentage">{this.props.currentUser.score}</span>;          
     }
 
 

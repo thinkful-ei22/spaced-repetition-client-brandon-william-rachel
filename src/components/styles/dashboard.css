@@ -7,7 +7,7 @@
 }
 .red{
   color: red;
-  font-size: 12px;
+  font-size: 10px;
 }
 .hidden{
   display: none;
@@ -18,6 +18,7 @@
 
 .dash-main-img{
   width: 100%;
+  height: 100%;
   background-color: white;
   opacity: 0.7;
   z-index: -2;
@@ -27,7 +28,8 @@
   position: absolute;
   background-color: white;
   opacity: .6;
-  height: 55px;
+  min-height: 50px;
+  max-height: 90px;
   width: 66%;
   border: 1px solid black;
   z-index: 1;
@@ -45,7 +47,7 @@
 
 .prompt-section > button {
   position: relative;
-  left: 40%;
+  left: 42%;
 }
 .answer{
   position: absolute;
@@ -62,13 +64,14 @@
   position: absolute;
 width: 100%;
 text-align: center;
-
-
+bottom: 0;
+top: 0px;
 }
 .answer > input{
   width: 58%;
-  top: 29px;
-  height: 14px;
+  top: 26px;
+  height: 17px;
+  font-size: 10px;
   margin-left: 4px;
   position: absolute;
 
@@ -92,7 +95,7 @@ left: 82%;
 }
 .finish{
   position: relative;
-  left: 40%; 
+  left: 42%; 
   margin-bottom: 10px;
 }
 .dashboard-name, .score{
@@ -134,10 +137,36 @@ left: 82%;
       top: 225px;
       }
   }
+  /* Pixel 2 */
+
+@media all and (min-width: 376px) and (max-width: 412px) {
+  #hint-button{
+    position: relative;
+    left: 42%;
+  }
+  .answer{
+    position: absolute;
+    background-color: white;
+    opacity: .8;
+    height: 55px;
+    width: 66%;
+    border: 1px solid black;
+    z-index: 1;
+    left: 15%;
+    top: 220px;
+  }
+  .finish{
+    position: relative;
+    left: 43%;
+  }
+  .next{
+    top: 250px;
+    }
+ }
 
   /* Pixel 2/2 XL */
 
-  @media all and (min-width: 376px) and (max-width: 411px) {
+  @media all and (min-width: 376px) and (max-width: 412px) and (-webkit-device-pixel-ratio: 3.5) {
     .answer{
       position: absolute;
       background-color: white;
@@ -155,7 +184,7 @@ left: 82%;
   }
    /* iPhone 6/7/8 Plus */
 
-   @media all and (min-width: 411px) and (max-width: 414px) {
+   @media all and (min-width: 413px) and (max-width: 414px) {
     .answer{
       position: absolute;
       background-color: white;
@@ -169,11 +198,11 @@ left: 82%;
     }
     .prompt-section > button {
       position: relative;
-      left: 45%;
+      left: 44%;
     }
     .finish{
       position: relative;
-      left: 45%; 
+      left: 43%; 
     }
     .next{
       top: 250px;
@@ -181,7 +210,7 @@ left: 82%;
 
   }
   /* iphone 5/SE landscape */
-  @media all and (min-width: 412px) and (max-width: 568px) and (orientation: landscape) {
+  @media all and (min-width: 415px) and (max-width: 568px) and (orientation: landscape) {
     .dash-main-img-section{
 height: 220px;
     }
@@ -294,8 +323,11 @@ height: 262px;
 
     /* iPhone 6/7/8 landscape */
     @media all and (min-width: 641px) and (max-width: 667px) and (orientation: landscape) {
+     .dashboard{
+       height: 208px;
+     }
       .dash-main-img-section{
-  height: 264px;
+  height: 100%;
       }
       .dash-main-img{
         height: 100%;
@@ -306,7 +338,7 @@ height: 262px;
       }
       .prompt-section > button {
         position: relative;
-        left: 45%;
+        left: 46%;
       }
       .answer{
         position: absolute;
@@ -317,12 +349,15 @@ height: 262px;
         border: 1px solid black;
         z-index: 1;
         left: 15%;
-        top: 238px;
+        top: 182px;
+      }
+      .answer > label{
+        font-size: 16px;
       }
       .answer > input{
         width: 75%;
-        top: 29px;
-        height: 14px;
+        top: 23px;
+        height: 20px;
         margin-left: 4px;
         position: absolute;
       
@@ -337,8 +372,8 @@ height: 262px;
         position: absolute;
         z-index: 1;
         border-radius: 8px;
-      top: 210px;
-      left: 85%;
+      top: 213px;
+      left: 83%;
       }
       .finish{
         position: relative;
@@ -349,71 +384,55 @@ height: 262px;
       }
     }
 
-    /* Pixel 2 landscape */
-    @media all and (min-width: 668px) and (max-width: 731px) and (orientation: landscape) {
-      .dash-main-img-section{
-  height: 300px;
-      }
-      .dash-main-img{
-        height: 100%;
-        background-color: white;
-        opacity: 0.7;
-        z-index: -2;
-      
-      }
-      .prompt-section > button {
-        position: relative;
-        left: 45%;
-      }
-      .answer{
-        position: absolute;
-        background-color: white;
-        opacity: .6;
-        height: 55px;
-        width: 66%;
-        border: 1px solid black;
-        z-index: 1;
-        left: 15%;
-        top: 275px;
-      }
-      .answer > input{
-        width: 75%;
-        top: 29px;
-        height: 14px;
-        margin-left: 4px;
-        position: absolute;
-      
-      }
-      .answer  > button{
-        position: absolute;
-      left: 80%;
-      top: 29px;
-      border-radius: 8px;
-      }
-      .next{
-        position: absolute;
-        z-index: 1;
-        border-radius: 8px;
-      top: 305px;
-      left: 85%;
-      width: 12%;
-      }
-      .finish{
-        position: relative;
-        left: 45%; 
-      }
-      .dashboard-name, .score{
-        text-align: center;
-      }
-    }
 
+
+/* Pixel 2 landscape */
+@media all and (min-width: 668px) and (max-width: 684px) and (orientation: landscape) {
+.dashboard{
+  height: 285px;
+}
+.dash-main-img-section {
+  height: 100%;
+}
+.answer{
+  top: 258px;
+}
+.prompt-section > button {
+  position: relative;
+  left: 48%;
+}
+.next{
+  top: 288px;
+}
+.finish{
+  left: 46%;
+}
+.answer > label {
+  font-size: 15px;
+  text-align: center;
+}
+.answer > input {
+  height: 18px;
+  font-size: 13px;
+  width: 80%;
+}
+.answer > button {
+  left: 85%;
+}
+}
     /* iPhone 6/7/8 Plus landscape */
     @media all and (min-width: 732px) and (max-width: 736px) and (orientation: landscape) {
+      .black{
+        font-size: 17px;
+      }
+      .dashboard{
+        height: 280px;
+      }
       .dash-main-img-section{
-  height: 300px;
+  height: 100%;
       }
       .dash-main-img{
-        height: 100%;
+        height: 96%;
         background-color: white;
         opacity: 0.7;
         z-index: -2;
@@ -421,7 +440,8 @@ height: 262px;
       }
       .prompt-section > button {
         position: relative;
-        left: 45%;
+        left: 47%;
+        
       }
       .answer{
         position: absolute;
@@ -432,13 +452,17 @@ height: 262px;
         border: 1px solid black;
         z-index: 1;
         left: 15%;
-        top: 275px;
+        top: 220px;
+      }
+      .red{
+        font-size: 12px;
       }
       .answer > input{
         width: 75%;
-        top: 29px;
-        height: 14px;
+        top: 25px;
+        height: 20px;
         margin-left: 4px;
+        font-size: 12px;
         position: absolute;
       
       }
@@ -452,16 +476,19 @@ height: 262px;
         position: absolute;
         z-index: 1;
         border-radius: 8px;
-      top: 305px;
+      top: 282px;
       left: 85%;
       width: 12%;
       }
       .finish{
         position: relative;
-        left: 45%; 
+        left: 46%; 
+        bottom: 35px;
       }
       .dashboard-name, .score{
         text-align: center;
+        position: relative;
+        bottom: 35px;
       }
     }
 
@@ -477,7 +504,7 @@ height: 262px;
         }
         .prompt-section > button {
           position: relative;
-          left: 45%;
+          left: 47%;
         }
         .answer{
           position: absolute;
@@ -491,7 +518,10 @@ height: 262px;
           top: 455px;
         }
         .red{
-          font-size: 16px;
+          font-size: 15px !important;
+        }
+        .green{
+          font-size: 15px !important;
         }
         .answer > input{
           width: 75%;
@@ -517,7 +547,7 @@ height: 262px;
         }
         .finish{
           position: relative;
-          left: 45%; 
+          left: 46%; 
         }
         .dashboard-name, .score{
           text-align: center;
@@ -653,16 +683,15 @@ height: 262px;
       
       }
       .prompt-section{
-        height: 105px;
+        min-height: 105px;
         width: 66%;
       }
       .prompt-section > h3 {
-        font-size: 30px;
+        font-size: 25px;
       }
       .prompt-section > button {
         position: relative;
         left: 45.5%;
-        top: 10px;
         width: 12%;
         height: 25px;
       }
@@ -690,7 +719,7 @@ height: 262px;
       }
       .answer > button{
         position: absolute;
-      left: 43%;
+      left: 47%;
       top: 75px;
       border-radius: 8px;
       height: 25px;
@@ -718,13 +747,22 @@ height: 262px;
 
     /* iPad landscape */
   @media all and (orientation: landscape) and (min-width: 824px) and (max-width: 1024px)  {
-   
+   .dashboard{
+     height: 542px;
+   }
+
+   .dash-main-img-section{
+     height: 100%;
+   }
     .dash-main-img{
       height: 100%;
       background-color: white;
       opacity: 0.7;
       z-index: -2;
-    
+    }
+    .prompt-section{
+      min-height: 105px;
+      
     }
     .prompt-section > button {
       position: relative;
@@ -739,7 +777,7 @@ height: 262px;
       border: 1px solid black;
       z-index: 1;
       left: 15%;
-      top: 515px;
+      top: 478px;
     }
     .answer  > input{
       width: 95%;
@@ -751,7 +789,7 @@ height: 262px;
     }
     .answer  > button{
       position: absolute;
-    left: 46%;
+    left: 48%;
     top: 75px;
     border-radius: 8px;
     }
@@ -789,7 +827,7 @@ height: 262px;
       left: 16%;
     }
     .prompt-section > h3 {
-      font-size: 30px;
+      font-size: 25px;
     }
     .prompt-section > button {
       position: relative;
@@ -799,7 +837,7 @@ height: 262px;
       height: 25px;
     }
     .answer  > label {
-      font-size: 30px;
+      font-size: 25px;
     }
     .answer{
       position: absolute;
@@ -822,7 +860,7 @@ height: 262px;
     }
     .answer  > button{
       position: absolute;
-    left: 43%;
+    left: 46%;
     top: 80px;
     border-radius: 8px;
     }
@@ -857,17 +895,17 @@ height: 262px;
   
   }
   .prompt-section{
-    height: 105px;
+    min-height: 105px;
+    max-height: 200px;
     width: 66%;
     left: 18%;
   }
   .prompt-section > h3 {
-    font-size: 30px;
+    font-size: 25px;
   }
   .prompt-section > button {
     position: relative;
     left: 44%;
-    top: 10px;
     width: 12%;
     height: 35px;
     font-size: 16px;
@@ -897,7 +935,7 @@ height: 262px;
   }
   .answer > button{
     position: absolute;
-  left: 43%;
+  left: 42%;
   top: 75px;
   border-radius: 8px;
   height: 25px;
