@@ -83,7 +83,7 @@ left: 50%;
 
 @media all and (min-width: 412px) and (max-width: 414px) {
   .login-page {  
-    height: 672px;
+    height: 661px;
    }
 }
 
@@ -124,14 +124,26 @@ left: 50%;
   }
 }
   /* iPhone 6/7/8 Plus landscape */
-  @media all and (min-width: 732px) and (max-width: 736px) and (orientation: landscape) {
+  @media all and (min-width: 732px) and (max-width: 734px) and (orientation: landscape) {
     .login-page {  
-      height: 350px;
+      height: 375px;
+
      }
      .main-login-section, .login-page.main-img{
       height: 90%;
     }
   }
+
+    /* iPhone 6/7/8 Plus landscape */
+    @media all and (min-width: 735px) and (max-width: 736px) and (orientation: landscape) {
+      .login-page {  
+        height: 350px;
+  
+       }
+       .main-login-section, .login-page.main-img{
+        height: 90%;
+      }
+    }
   /* iPad */
 @media all and (min-width: 737px) and (max-width: 768px) {
   .login-page {  
