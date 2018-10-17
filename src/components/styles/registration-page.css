@@ -134,7 +134,7 @@ top: 50%;
  /* iPhone X landscape */
  @media all and (min-width: 732px) and (max-width: 736px) and (orientation: landscape) {
     .registration-page {  
-      height: 350px;
+      height: 310px;
      }
      .main-reg-section, .main-img{
        height: 90%;

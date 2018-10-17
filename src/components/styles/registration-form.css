@@ -196,9 +196,9 @@ button {
 /* iPhone 6/7/8 Plus landscape */
 @media all and (min-width: 732px) and (max-width: 736px) and (orientation: landscape) {
   .registration-form {
-    bottom: 280px;
+    bottom: 248px;
     left: 9%;
-    height: 240px;
+    height: 227px;
     opacity: .9;
   }
   .form-input{
@@ -208,6 +208,7 @@ button {
     label{
       font-size: 12px;
       bottom: 10px;
+      margin-top:7px;
     }
     input{
       position: relative;
@@ -218,13 +219,7 @@ button {
       font-size: 10px;
     }
 }
- /* iPhone X landscape */
- @media all and (min-width: 732px) and (max-width: 736px) and (orientation: landscape) {
-  .registration-form {
-    bottom: 290px;
-    left: 10%;
-  }
- }
+ 
  /* iPad */
  @media all and (min-width: 737px) and (max-width: 768px) {
   .registration-form {
@@ -238,6 +233,7 @@ button {
     }
     label{
       font-size: 20px !important;
+      margin-top: 4px;
     }
     
     input{
