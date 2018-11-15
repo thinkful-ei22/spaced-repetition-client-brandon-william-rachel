@@ -2,6 +2,10 @@ Learn Dothraki
 
 https://learndothraki.herokuapp.com/
 
+![screen shot 2018-11-15 at 5 14 38 pm](https://user-images.githubusercontent.com/40006828/48585208-f3d31d80-e8f9-11e8-8386-5d97cb645423.png)
+
+
+
 Overview
 
 Learn Dothraki through spaced repetition in a simple and fun way.
@@ -84,3 +88,5 @@ Allow users to register/login. Uses the spaced repetition algorithm to generate 
 }
 ```
 'Memory Strength' increments by 1 if question is answered correctly, otherwise it resets to 0. The value of 'next' is reassigned based on memory strength.  A larger memory strength will result in the 'next' value pointing further back in the queue.
+
+![screen shot 2018-11-15 at 5 13 36 pm](https://user-images.githubusercontent.com/40006828/48585184-d900a900-e8f9-11e8-816d-ba1c18b71646.png)
