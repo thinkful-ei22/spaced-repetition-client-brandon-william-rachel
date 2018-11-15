@@ -27,7 +27,7 @@ Allow users to register/login. Uses the spaced repetition algorithm to generate 
 
 * Request Type: `POST`
 
-* URL: `https://silly-noether-09bfca.netlify.com/`
+* URL: `https://learndothraki.herokuapp.com/auth`
 
 * Required Request Headers: 
 ```
@@ -55,9 +55,9 @@ Allow users to register/login. Uses the spaced repetition algorithm to generate 
 
 
 
-##### Book Data
+##### Question Data
 
-###### GET all communal books
+###### GET next question
 
 * Requires valid JSON Webtoken
 
@@ -72,41 +72,15 @@ Allow users to register/login. Uses the spaced repetition algorithm to generate 
 }
 ```
 
-* Response Body will be an array of events: 
-(nuggets are highlighted passages of a book)
+* Response Body will be a single question based on spaced repetition algorithm:
 ```
-[
-  {
-        "nuggets": [
-            {
-                "fromPage": "20",
-                "toPage": "49",
-                "description": "Deutsch is a genius.  Here, he sums up his worldview, from quantum mechanics to the future of mankind.  Never heard a better case for optimism.",
-                "id": "5be76c68783f4904bfc0211d"
-            },
-            {
-                "fromPage": "300",
-                "toPage": "340",
-                "description": "I had to throw this one in there.  A theory of art by a quantum computing physicist.  Bizarre but fascinating.",
-                "id": "5be76c68783f4904bfc0211e"
-            }
-        ],
-        "comments": [
-            {
-                "text": "Have you read Pinker's 'How the Mind Works'?  There are some insights there that put a lot of this book into a larger context of Pinker's work in linguistics.",
-                "author": "gatsby",
-                "id": "5be76901783f4904bfc02116"
-            }
-        ],
-        "userId": "000000000000000000000001",
-        "title": "The Beginning of Infinity",
-        "subtitle": "",
-        "description": "The New York Times bestseller: A provocative, imaginative exploration of the nature and progress of knowledge In this groundbreaking book, award-winning physicist David Deutsch argues that explanations have a fundamental place in the universe—and that improving them is the basic regulating principle of all successful human endeavor. Taking us on a journey through every fundamental field of science, as well as the history of civilization, art, moral values, and the theory of political institutions, Deutsch tracks how we form new explanations and drop bad ones, explaining the conditions under which progress—which he argues is potentially boundless—can and cannot happen. Hugely ambitious and highly original, The Beginning of Infinity explores and establishes deep connections between the laws of nature, the human condition, knowledge, and the possibility for progress.",
-        "authors": "David Deutsch",
-        "Url": "https://play.google.com/store/books/details?id=jZHanN5_KPgC&source=gbs_api",
-        "image": "http://books.google.com/books/content?id=jZHanN5_KPgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-       
-        "id": "5be76c68783f4904bfc0211f"
-    }, ...
-]
+{
+    "_id": "5b9c1067788c121d08079827",
+    "question": "The stars are charging for you!",
+    "hint": "The Dothraki word for 'stars' is 'shieraki'",
+    "answer": "Shieraki gori ha yeraan!",
+    "_next": 1,
+    "memoryStrength": 1
+}
 ```
+'Memory Strength' increments by 1 if question is answered correctly, otherwise it resets to 0. The value of 'next' is reassigned based on memory strength.  A larger memory strength will result in the 'next' value pointing further back in the queue.
